@@ -54,7 +54,7 @@
     function initNengoList() {
         // データ生成
         const startYear = 1868;
-        const endYear = 2025;
+        const endYear = new Date().getFullYear();
         const data = generateNengoList(startYear, endYear);
 
         // テーブル生成

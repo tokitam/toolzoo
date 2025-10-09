@@ -30,7 +30,7 @@ class Toolzoo_Nengo_List {
             <div class="toolzoo-nengo-header">
                 <h3>年号一覧表</h3>
                 <p class="toolzoo-nengo-description">
-                    1868年（明治元年）から2025年までの西暦と日本の年号を一覧表示しています。
+                    1868年（明治元年）から<?php echo date('Y'); ?>年までの西暦と日本の年号を一覧表示しています。
                 </p>
             </div>
 
