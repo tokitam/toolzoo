@@ -88,6 +88,14 @@ class Toolzoo_Password_Generator {
                         >
                         記号 (!@#$%^&amp;*()_+-=[]{}|;:,.&lt;&gt;?)
                     </label>
+                    <label class="toolzoo-checkbox-label">
+                        <input
+                            type="checkbox"
+                            id="toolzoo-exclude-ambiguous"
+                            class="toolzoo-option-checkbox"
+                        >
+                        間違えやすい文字を除外する
+                    </label>
                 </div>
 
                 <div class="toolzoo-option-group">

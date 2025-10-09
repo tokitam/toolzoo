@@ -34,6 +34,7 @@
 │ ☑ 英字小文字 (a-z)                          │
 │ ☑ 英字大文字 (A-Z)                          │
 │ ☑ 記号 (!@#$%^&*()_+-=[]{}|;:,.<>?)         │
+│ ☐ 間違えやすい文字を除外する                 │
 │                                             │
 │ [ パスワード生成 (20個) ]                   │
 │                                             │
@@ -84,6 +85,9 @@
 | 英字小文字 | `toolzoo-use-lowercase` | チェック | abcdefghijklmnopqrstuvwxyz |
 | 英字大文字 | `toolzoo-use-uppercase` | チェック | ABCDEFGHIJKLMNOPQRSTUVWXYZ |
 | 記号 | `toolzoo-use-symbols` | チェック | !@#$%^&*()_+-=[]{}|;:,.<>? |
+| 間違えやすい文字を除外 | `toolzoo-exclude-ambiguous` | 未チェック | - |
+
+**除外される文字**: `0, O, I, l, 1, !, ', ", `, ., ,, ;, :, /, \, |, ~, -`
 
 **バリデーション**: 最低1つの文字種別を選択必須
 
@@ -160,6 +164,12 @@ function generatePassword(length, options) {
   if (options.lowercase) charset += 'abcdefghijklmnopqrstuvwxyz';
   if (options.uppercase) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   if (options.symbols) charset += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+  // 間違えやすい文字を除外
+  if (options.excludeAmbiguous) {
+    const ambiguous = '0OIl1!\'"`.,:;/\\|~-';
+    charset = charset.split('').filter(char => !ambiguous.includes(char)).join('');
+  }
 
   let password = '';
   const values = new Uint32Array(length);
@@ -346,7 +356,8 @@ document.addEventListener('DOMContentLoaded', function() {
     numbers: true,
     lowercase: true,
     uppercase: true,
-    symbols: true
+    symbols: true,
+    excludeAmbiguous: false
   };
 
   generateAndDisplay(defaultOptions);

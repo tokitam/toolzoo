@@ -68,12 +68,14 @@
      * ユーザー設定を取得
      */
     function getOptions() {
+        const excludeAmbiguousEl = document.getElementById('toolzoo-exclude-ambiguous');
         return {
             length: parseInt(document.getElementById('toolzoo-password-length').value),
             numbers: document.getElementById('toolzoo-use-numbers').checked,
             lowercase: document.getElementById('toolzoo-use-lowercase').checked,
             uppercase: document.getElementById('toolzoo-use-uppercase').checked,
-            symbols: document.getElementById('toolzoo-use-symbols').checked
+            symbols: document.getElementById('toolzoo-use-symbols').checked,
+            excludeAmbiguous: excludeAmbiguousEl ? excludeAmbiguousEl.checked : false
         };
     }
 
@@ -145,6 +147,14 @@
         if (options.lowercase) charset += 'abcdefghijklmnopqrstuvwxyz';
         if (options.uppercase) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         if (options.symbols) charset += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+        // 間違えやすい文字を除外
+        if (options.excludeAmbiguous) {
+            const ambiguous = '0OIl1!\'"`.,:;/\\|~-';
+            charset = charset.split('').filter(function(char) {
+                return !ambiguous.includes(char);
+            }).join('');
+        }
 
         let password = '';
 
