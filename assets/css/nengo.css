@@ -1,0 +1,304 @@
+/**
+ * 年号一覧表示ツール スタイル
+ *
+ * @package ToolZoo
+ */
+
+/* コンテナ */
+.toolzoo-nengo-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolzoo-nengo-header h3 {
+    margin: 0 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0073aa;
+    font-size: 20px;
+    color: #333;
+}
+
+.toolzoo-nengo-description {
+    margin: 10px 0 20px 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ジャンプボタン */
+.toolzoo-nengo-jump-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.toolzoo-nengo-jump-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.toolzoo-nengo-jump-btn:hover {
+    background: #e0e0e0;
+    transform: translateY(-1px);
+}
+
+.toolzoo-nengo-jump-btn:active {
+    transform: translateY(0);
+}
+
+/* テーブルラッパー */
+.toolzoo-nengo-table-wrapper {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* テーブル */
+.toolzoo-nengo-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: #fff;
+}
+
+.toolzoo-nengo-list-table thead {
+    position: sticky;
+    top: 0;
+    background: #2c3e50;
+    color: #fff;
+    z-index: 10;
+}
+
+.toolzoo-nengo-list-table th {
+    padding: 12px 8px;
+    text-align: center;
+    font-weight: 600;
+    border-right: 1px solid #34495e;
+}
+
+.toolzoo-nengo-list-table th:last-child {
+    border-right: none;
+}
+
+.toolzoo-nengo-list-table tbody {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.toolzoo-nengo-list-table tr {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.toolzoo-nengo-list-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.toolzoo-nengo-list-table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+.toolzoo-nengo-list-table tbody tr.current-year {
+    background-color: #ffffcc;
+    font-weight: bold;
+}
+
+.toolzoo-nengo-list-table tbody tr.current-year:hover {
+    background-color: #fff9b3;
+}
+
+.toolzoo-nengo-list-table td {
+    padding: 10px 8px;
+    text-align: center;
+    border-right: 1px solid #eee;
+}
+
+.toolzoo-nengo-list-table td:last-child {
+    border-right: none;
+}
+
+.toolzoo-nengo-list-table td.seireki {
+    font-weight: 600;
+    text-align: right;
+    padding-right: 15px;
+    color: #2c3e50;
+}
+
+.toolzoo-nengo-list-table td.nengo {
+    color: #555;
+}
+
+/* 改元年のハイライト */
+.toolzoo-nengo-list-table tr.kaigen-year {
+    background-color: #e8f5e9;
+}
+
+.toolzoo-nengo-list-table tr.kaigen-year:hover {
+    background-color: #c8e6c9;
+}
+
+/* 読み込み中 */
+.toolzoo-loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* フッター */
+.toolzoo-nengo-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.toolzoo-btn-secondary {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.toolzoo-btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+}
+
+.toolzoo-btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* テーブルコンテナのスクロール */
+#toolzoo-nengo-table-container {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .toolzoo-nengo-container {
+        padding: 20px 15px;
+        margin: 15px 10px;
+    }
+
+    .toolzoo-nengo-header h3 {
+        font-size: 18px;
+    }
+
+    .toolzoo-nengo-description {
+        font-size: 13px;
+    }
+
+    .toolzoo-nengo-jump-buttons {
+        gap: 8px;
+    }
+
+    .toolzoo-nengo-jump-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .toolzoo-nengo-list-table {
+        font-size: 12px;
+    }
+
+    .toolzoo-nengo-list-table th,
+    .toolzoo-nengo-list-table td {
+        padding: 8px 5px;
+    }
+
+    #toolzoo-nengo-table-container {
+        max-height: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .toolzoo-nengo-container {
+        padding: 15px 10px;
+    }
+
+    .toolzoo-nengo-list-table {
+        font-size: 11px;
+    }
+
+    .toolzoo-nengo-list-table th,
+    .toolzoo-nengo-list-table td {
+        padding: 6px 3px;
+    }
+
+    .toolzoo-nengo-jump-buttons {
+        gap: 5px;
+    }
+
+    .toolzoo-nengo-jump-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+
+    #toolzoo-nengo-table-container {
+        max-height: 400px;
+    }
+}
+
+/* スクロールバーのスタイル（Webkit系ブラウザ） */
+#toolzoo-nengo-table-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+#toolzoo-nengo-table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#toolzoo-nengo-table-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#toolzoo-nengo-table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 印刷スタイル */
+@media print {
+    .toolzoo-nengo-jump-buttons,
+    .toolzoo-nengo-footer {
+        display: none;
+    }
+
+    .toolzoo-nengo-container {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+
+    .toolzoo-nengo-list-table thead {
+        position: static;
+    }
+
+    #toolzoo-nengo-table-container {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .toolzoo-nengo-list-table tbody tr {
+        page-break-inside: avoid;
+    }
+}
