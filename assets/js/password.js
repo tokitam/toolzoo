@@ -150,7 +150,7 @@
 
         // 間違えやすい文字を除外
         if (options.excludeAmbiguous) {
-            const ambiguous = '0OIl1!\'"`.,:;/\\|~-';
+            const ambiguous = '0OoQiIl1!\'"`.,:;/\\|[]~-';
             charset = charset.split('').filter(function(char) {
                 return !ambiguous.includes(char);
             }).join('');
