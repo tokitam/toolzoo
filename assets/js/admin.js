@@ -1,19 +1,19 @@
 /**
- * ToolZoo 管理画面JavaScript
+ * ToolZoo Admin JavaScript
  */
 
 (function($) {
     'use strict';
 
     /**
-     * ドキュメント準備完了時の処理
+     * Initialize when document is ready
      */
     $(document).ready(function() {
         initCopyButtons();
     });
 
     /**
-     * コピーボタンの初期化
+     * Initialize copy buttons
      */
     function initCopyButtons() {
         $('.toolzoo-copy-btn').on('click', function(e) {
@@ -27,33 +27,33 @@
     }
 
     /**
-     * クリップボードにコピー
+     * Copy to clipboard
      *
-     * @param {string} text コピーするテキスト
-     * @param {jQuery} button ボタン要素
+     * @param {string} text Text to copy
+     * @param {jQuery} button Button element
      */
     function copyToClipboard(text, button) {
-        // モダンブラウザのClipboard API
+        // Modern browser Clipboard API
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text)
                 .then(function() {
                     showCopySuccess(button);
                 })
                 .catch(function(err) {
-                    console.error('コピーに失敗しました:', err);
+                    console.error('Copy failed:', err);
                     fallbackCopy(text, button);
                 });
         } else {
-            // フォールバック処理
+            // Fallback method
             fallbackCopy(text, button);
         }
     }
 
     /**
-     * フォールバックコピー処理（古いブラウザ対応）
+     * Fallback copy method (for older browsers)
      *
-     * @param {string} text コピーするテキスト
-     * @param {jQuery} button ボタン要素
+     * @param {string} text Text to copy
+     * @param {jQuery} button Button element
      */
     function fallbackCopy(text, button) {
         const textarea = document.createElement('textarea');
@@ -64,38 +64,38 @@
         textarea.style.left = '0';
         document.body.appendChild(textarea);
         textarea.select();
-        textarea.setSelectionRange(0, 99999); // モバイル対応
+        textarea.setSelectionRange(0, 99999); // Mobile support
 
         try {
             const success = document.execCommand('copy');
             if (success) {
                 showCopySuccess(button);
             } else {
-                console.error('execCommand("copy")が失敗しました');
+                console.error('execCommand("copy") failed');
             }
         } catch (err) {
-            console.error('フォールバックコピーに失敗しました:', err);
+            console.error('Fallback copy failed:', err);
         } finally {
             document.body.removeChild(textarea);
         }
     }
 
     /**
-     * コピー成功の視覚的フィードバック
+     * Show visual feedback for successful copy
      *
-     * @param {jQuery} button ボタン要素
+     * @param {jQuery} button Button element
      */
     function showCopySuccess(button) {
         const originalText = button.text();
 
-        // ボタンのテキストとスタイルを変更
-        button.text('コピーしました！');
+        // Change button text and style
+        button.text('Copied!');
         button.addClass('copied');
 
-        // ボタンを一時的に無効化
+        // Temporarily disable button
         button.prop('disabled', true);
 
-        // 2秒後に元に戻す
+        // Restore after 2 seconds
         setTimeout(function() {
             button.text(originalText);
             button.removeClass('copied');

@@ -1,5 +1,5 @@
 /**
- * パスワード生成ツール JavaScript
+ * Password Generator Tool JavaScript
  *
  * @package ToolZoo
  */
@@ -7,33 +7,33 @@
 (function() {
     'use strict';
 
-    // 現在表示中のパスワードリスト
+    // Currently displayed password list
     let currentPasswords = [];
 
     /**
-     * 初期化
+     * Initialize
      */
     document.addEventListener('DOMContentLoaded', function() {
         initPasswordGenerator();
     });
 
     /**
-     * パスワードジェネレーターの初期化
+     * Initialize password generator
      */
     function initPasswordGenerator() {
-        // イベントリスナーを設定
+        // Setup event listeners
         setupEventListeners();
 
-        // デフォルト設定で自動生成
+        // Auto-generate with default settings
         const defaultOptions = getOptions();
         generateAndDisplay(defaultOptions);
     }
 
     /**
-     * イベントリスナーの設定
+     * Setup event listeners
      */
     function setupEventListeners() {
-        // 生成ボタン
+        // Generate button
         const generateBtn = document.getElementById('toolzoo-generate-btn');
         if (generateBtn) {
             generateBtn.addEventListener('click', function() {
@@ -44,7 +44,7 @@
             });
         }
 
-        // スライダー
+        // Slider
         const slider = document.getElementById('toolzoo-password-length');
         if (slider) {
             slider.addEventListener('input', function() {
@@ -55,7 +55,7 @@
             });
         }
 
-        // チェックボックス
+        // Checkboxes
         const checkboxes = document.querySelectorAll('.toolzoo-char-type');
         checkboxes.forEach(function(checkbox) {
             checkbox.addEventListener('change', function() {
@@ -65,7 +65,7 @@
     }
 
     /**
-     * ユーザー設定を取得
+     * Get user settings
      */
     function getOptions() {
         const excludeAmbiguousEl = document.getElementById('toolzoo-exclude-ambiguous');
@@ -80,13 +80,13 @@
     }
 
     /**
-     * オプションのバリデーション
+     * Validate options
      */
     function validateOptions(options) {
         const errorMsg = document.getElementById('toolzoo-error-message');
 
         if (!options.numbers && !options.lowercase && !options.uppercase && !options.symbols) {
-            showError('最低1つの文字種別を選択してください');
+            showError('Please select at least one character type');
             return false;
         }
 
@@ -95,7 +95,7 @@
     }
 
     /**
-     * エラーメッセージを表示
+     * Show error message
      */
     function showError(message) {
         const errorMsg = document.getElementById('toolzoo-error-message');
@@ -106,7 +106,7 @@
     }
 
     /**
-     * エラーメッセージを非表示
+     * Hide error message
      */
     function hideError() {
         const errorMsg = document.getElementById('toolzoo-error-message');
@@ -116,7 +116,7 @@
     }
 
     /**
-     * パスワードを生成して表示
+     * Generate and display passwords
      */
     function generateAndDisplay(options) {
         const passwords = generatePasswordList(options.length, options, 20);
@@ -125,7 +125,7 @@
     }
 
     /**
-     * パスワードリストを生成
+     * Generate password list
      */
     function generatePasswordList(length, options, count) {
         const passwords = [];
@@ -139,7 +139,7 @@
     }
 
     /**
-     * 1個のパスワードを生成
+     * Generate a single password
      */
     function generatePassword(length, options) {
         let charset = '';
@@ -148,7 +148,7 @@
         if (options.uppercase) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         if (options.symbols) charset += '!@#$%^&*()_+-=[]{}|;:,.<>?';
 
-        // 間違えやすい文字を除外
+        // Exclude ambiguous characters
         if (options.excludeAmbiguous) {
             const ambiguous = '0OoQiIl1!\'"`.,:;/\\|[]~-';
             charset = charset.split('').filter(function(char) {
@@ -158,7 +158,7 @@
 
         let password = '';
 
-        // crypto.getRandomValuesを使用（暗号学的に安全）
+        // Use crypto.getRandomValues (cryptographically secure)
         if (window.crypto && window.crypto.getRandomValues) {
             const values = new Uint32Array(length);
             window.crypto.getRandomValues(values);
@@ -167,22 +167,22 @@
                 password += charset[values[i] % charset.length];
             }
         } else {
-            // フォールバック: Math.random()
+            // Fallback: Math.random()
             for (let i = 0; i < length; i++) {
                 password += charset[Math.floor(Math.random() * charset.length)];
             }
         }
 
-        // 各文字種別が含まれるか確認
+        // Check if each character type is included
         if (!validatePassword(password, options)) {
-            return generatePassword(length, options); // 再帰的に再生成
+            return generatePassword(length, options); // Recursively regenerate
         }
 
         return password;
     }
 
     /**
-     * パスワードのバリデーション
+     * Validate password
      */
     function validatePassword(password, options) {
         if (options.numbers && !/[0-9]/.test(password)) return false;
@@ -193,7 +193,7 @@
     }
 
     /**
-     * パスワードリストを表示
+     * Display password list
      */
     function displayPasswordList(passwords) {
         const container = document.getElementById('toolzoo-password-list-container');
@@ -204,7 +204,7 @@
     }
 
     /**
-     * パスワードリストのHTMLを生成
+     * Generate password list HTML
      */
     function renderPasswordList(passwords) {
         let html = '<ol class="toolzoo-password-list">';
@@ -212,20 +212,20 @@
         passwords.forEach(function(password, index) {
             html += '<li class="toolzoo-password-item">';
             html += '<span class="toolzoo-password-text">' + escapeHtml(password) + '</span>';
-            html += '<button class="toolzoo-copy-single-btn" data-password-index="' + index + '">コピー</button>';
+            html += '<button class="toolzoo-copy-single-btn" data-password-index="' + index + '">Copy</button>';
             html += '</li>';
         });
 
         html += '</ol>';
         html += '<div class="toolzoo-copy-all-container">';
-        html += '<button id="toolzoo-copy-all-btn" class="toolzoo-btn toolzoo-btn-primary">すべてコピー</button>';
+        html += '<button id="toolzoo-copy-all-btn" class="toolzoo-btn toolzoo-btn-primary">Copy All</button>';
         html += '</div>';
 
         return html;
     }
 
     /**
-     * HTMLエスケープ
+     * HTML escape
      */
     function escapeHtml(text) {
         const map = {
@@ -239,10 +239,10 @@
     }
 
     /**
-     * コピーイベントリスナーを設定
+     * Attach copy event listeners
      */
     function attachCopyEventListeners(passwords) {
-        // 個別コピーボタン
+        // Individual copy buttons
         const singleBtns = document.querySelectorAll('.toolzoo-copy-single-btn');
         singleBtns.forEach(function(button) {
             button.addEventListener('click', function() {
@@ -252,7 +252,7 @@
             });
         });
 
-        // すべてコピーボタン
+        // Copy all button
         const copyAllBtn = document.getElementById('toolzoo-copy-all-btn');
         if (copyAllBtn) {
             copyAllBtn.addEventListener('click', function() {
@@ -262,7 +262,7 @@
     }
 
     /**
-     * 個別パスワードをコピー
+     * Copy single password
      */
     async function copySinglePassword(password, button) {
         try {
@@ -278,7 +278,7 @@
     }
 
     /**
-     * すべてのパスワードをコピー
+     * Copy all passwords
      */
     async function copyAllPasswords(passwords) {
         const text = passwords.join('\n');
@@ -296,11 +296,11 @@
     }
 
     /**
-     * コピー成功のフィードバック表示
+     * Show copy success feedback
      */
     function showCopySuccess(button) {
         const originalText = button.textContent;
-        button.textContent = 'コピー済み';
+        button.textContent = 'Copied';
         button.classList.add('copied');
 
         setTimeout(function() {
@@ -310,14 +310,14 @@
     }
 
     /**
-     * すべてコピー成功のフィードバック表示
+     * Show copy all success feedback
      */
     function showCopyAllSuccess() {
         const button = document.getElementById('toolzoo-copy-all-btn');
         if (!button) return;
 
         const originalText = button.textContent;
-        button.textContent = 'コピー完了';
+        button.textContent = 'Copied';
         button.classList.add('copied');
 
         setTimeout(function() {
@@ -327,7 +327,7 @@
     }
 
     /**
-     * フォールバック: 古いブラウザ対応
+     * Fallback: for older browsers
      */
     function fallbackCopyToClipboard(text, button) {
         const textarea = document.createElement('textarea');
@@ -347,7 +347,7 @@
                 }
             }
         } catch (err) {
-            console.error('コピーに失敗しました', err);
+            console.error('Copy failed', err);
         } finally {
             document.body.removeChild(textarea);
         }

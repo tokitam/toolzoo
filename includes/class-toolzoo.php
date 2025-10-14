@@ -1,38 +1,38 @@
 <?php
 /**
- * ToolZoo メインクラス
+ * ToolZoo Main Class
  *
  * @package ToolZoo
  */
 
-// セキュリティ: 直接アクセスを防止
+// Security: Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
 }
 
 /**
- * Toolzoo メインクラス
+ * Toolzoo Main Class
  */
 class Toolzoo {
     /**
-     * 初期化
+     * Initialize
      */
     public function init() {
-        // 機能クラスの読み込み
+        // Load feature classes
         $this->load_classes();
 
-        // 管理画面クラスの読み込み
+        // Load admin class
         $this->load_admin_class();
 
-        // ショートコードの登録
+        // Register shortcodes
         $this->register_shortcodes();
 
-        // 国際化の設定
+        // Setup internationalization
         add_action('init', array($this, 'load_textdomain'));
     }
 
     /**
-     * 機能クラスの読み込み
+     * Load feature classes
      */
     private function load_classes() {
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-password-generator.php';
@@ -40,7 +40,7 @@ class Toolzoo {
     }
 
     /**
-     * 管理画面クラスの読み込み
+     * Load admin class
      */
     private function load_admin_class() {
         if (is_admin()) {
@@ -50,7 +50,7 @@ class Toolzoo {
     }
 
     /**
-     * ショートコードの登録
+     * Register shortcodes
      */
     private function register_shortcodes() {
         add_shortcode('toolzoo_password', array($this, 'password_shortcode'));
@@ -58,10 +58,10 @@ class Toolzoo {
     }
 
     /**
-     * パスワード生成ショートコード
+     * Password generator shortcode
      *
-     * @param array $atts ショートコード属性
-     * @return string HTML出力
+     * @param array $atts Shortcode attributes
+     * @return string HTML output
      */
     public function password_shortcode($atts) {
         $generator = new Toolzoo_Password_Generator();
@@ -69,10 +69,10 @@ class Toolzoo {
     }
 
     /**
-     * 年号一覧ショートコード
+     * Japanese era list shortcode
      *
-     * @param array $atts ショートコード属性
-     * @return string HTML出力
+     * @param array $atts Shortcode attributes
+     * @return string HTML output
      */
     public function nengo_shortcode($atts) {
         $list = new Toolzoo_Nengo_List();
@@ -80,7 +80,7 @@ class Toolzoo {
     }
 
     /**
-     * 翻訳ファイルの読み込み
+     * Load translation files
      */
     public function load_textdomain() {
         load_plugin_textdomain(
