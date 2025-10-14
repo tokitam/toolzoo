@@ -1,0 +1,257 @@
+/**
+ * ToolZoo 管理画面スタイル
+ */
+
+/* ===================================
+   ページ全体
+   =================================== */
+.toolzoo-admin-page {
+    max-width: 1200px;
+}
+
+/* ===================================
+   イントロダクション
+   =================================== */
+.toolzoo-admin-intro {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-left: 4px solid #2271b1;
+    padding: 15px 20px;
+    margin: 20px 0;
+}
+
+.toolzoo-admin-intro p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   ツールグリッド
+   =================================== */
+.toolzoo-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ===================================
+   ツールカード
+   =================================== */
+.toolzoo-tool-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.toolzoo-tool-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================
+   カードヘッダー
+   =================================== */
+.toolzoo-tool-header {
+    background: #f0f0f1;
+    padding: 15px 20px;
+    border-bottom: 1px solid #c3c4c7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toolzoo-tool-header .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #2271b1;
+    flex-shrink: 0;
+}
+
+.toolzoo-tool-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+/* ===================================
+   カードボディ
+   =================================== */
+.toolzoo-tool-body {
+    padding: 20px;
+}
+
+.toolzoo-tool-section {
+    margin-bottom: 20px;
+}
+
+.toolzoo-tool-section:last-child {
+    margin-bottom: 0;
+}
+
+.toolzoo-tool-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.toolzoo-tool-section p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #3c434a;
+}
+
+/* ===================================
+   ショートコード表示
+   =================================== */
+.toolzoo-shortcode-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f6f7f7;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #dcdcde;
+}
+
+.toolzoo-shortcode {
+    flex: 1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    color: #d63638;
+    background: transparent;
+    padding: 0;
+    word-break: break-all;
+}
+
+.toolzoo-copy-btn {
+    flex-shrink: 0;
+    padding: 4px 12px;
+    font-size: 12px;
+    height: auto;
+    line-height: 1.4;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.toolzoo-copy-btn.copied {
+    background: #00a32a;
+    border-color: #00a32a;
+    color: #fff;
+}
+
+.toolzoo-copy-btn.copied:hover {
+    background: #008a20;
+    border-color: #008a20;
+}
+
+/* ===================================
+   個別ツールプレビュー
+   =================================== */
+.toolzoo-admin-tool-preview {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.toolzoo-admin-tool-preview h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* ===================================
+   レスポンシブ対応
+   =================================== */
+
+/* タブレット以下 */
+@media screen and (max-width: 782px) {
+    .toolzoo-tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .toolzoo-shortcode-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .toolzoo-copy-btn {
+        width: 100%;
+    }
+
+    .toolzoo-tool-header {
+        padding: 12px 15px;
+    }
+
+    .toolzoo-tool-body {
+        padding: 15px;
+    }
+}
+
+/* スマートフォン */
+@media screen and (max-width: 600px) {
+    .toolzoo-admin-page {
+        margin: 10px;
+    }
+
+    .toolzoo-admin-intro {
+        padding: 12px 15px;
+    }
+
+    .toolzoo-tool-header h2 {
+        font-size: 16px;
+    }
+
+    .toolzoo-tool-section h3 {
+        font-size: 13px;
+    }
+
+    .toolzoo-shortcode {
+        font-size: 12px;
+    }
+}
+
+/* ===================================
+   アクセシビリティ
+   =================================== */
+
+/* フォーカス表示の強化 */
+.toolzoo-copy-btn:focus,
+.toolzoo-tool-section .button:focus {
+    box-shadow: 0 0 0 2px #2271b1;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+}
+
+/* ハイコントラストモード対応 */
+@media (prefers-contrast: high) {
+    .toolzoo-tool-card {
+        border: 2px solid #000;
+    }
+
+    .toolzoo-shortcode-wrapper {
+        border: 2px solid #000;
+    }
+}
+
+/* ===================================
+   印刷時のスタイル
+   =================================== */
+@media print {
+    .toolzoo-copy-btn,
+    .toolzoo-tool-section .button-primary {
+        display: none;
+    }
+
+    .toolzoo-tool-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}

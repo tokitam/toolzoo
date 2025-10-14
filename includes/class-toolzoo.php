@@ -21,6 +21,9 @@ class Toolzoo {
         // 機能クラスの読み込み
         $this->load_classes();
 
+        // 管理画面クラスの読み込み
+        $this->load_admin_class();
+
         // ショートコードの登録
         $this->register_shortcodes();
 
@@ -34,6 +37,16 @@ class Toolzoo {
     private function load_classes() {
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-password-generator.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-nengo-list.php';
+    }
+
+    /**
+     * 管理画面クラスの読み込み
+     */
+    private function load_admin_class() {
+        if (is_admin()) {
+            require_once TOOLZOO_PLUGIN_DIR . 'includes/class-admin.php';
+            new Toolzoo_Admin();
+        }
     }
 
     /**
