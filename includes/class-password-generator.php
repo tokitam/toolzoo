@@ -94,7 +94,7 @@ class Toolzoo_Password_Generator {
                             id="toolzoo-exclude-ambiguous"
                             class="toolzoo-option-checkbox"
                         >
-                        間違えやすい文字を除外する
+                        間違えやすい文字を除外する (!|1lIiO0oなど )
                     </label>
                 </div>
 
