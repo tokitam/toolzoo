@@ -1,23 +1,23 @@
 <?php
 /**
- * ToolZoo 管理画面クラス
+ * ToolZoo Admin Class
  *
  * @package ToolZoo
  */
 
-// セキュリティ: 直接アクセスを防止
+// Security: Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
 }
 
 /**
- * Toolzoo_Admin クラス
+ * Toolzoo_Admin class
  *
- * 管理画面のメニュー追加とツール一覧ページの表示を担当
+ * Handles admin menu addition and tools list page display
  */
 class Toolzoo_Admin {
     /**
-     * コンストラクタ
+     * Constructor
      */
     public function __construct() {
         add_action('admin_menu', array($this, 'add_admin_menu'));
@@ -25,30 +25,30 @@ class Toolzoo_Admin {
     }
 
     /**
-     * 管理画面にメニューを追加
+     * Add menu to admin screen
      */
     public function add_admin_menu() {
         add_menu_page(
-            'ToolZoo',                          // ページタイトル
-            'ToolZoo',                          // メニュータイトル
-            'manage_options',                   // 必要な権限
-            'toolzoo-tools',                    // メニュースラッグ
-            array($this, 'render_admin_page'),  // コールバック関数
-            'dashicons-admin-tools',            // アイコン
-            65                                  // 表示順
+            'ToolZoo',                          // Page title
+            'ToolZoo',                          // Menu title
+            'manage_options',                   // Required capability
+            'toolzoo-tools',                    // Menu slug
+            array($this, 'render_admin_page'),  // Callback function
+            'dashicons-admin-tools',            // Icon
+            65                                  // Position
         );
     }
 
     /**
-     * 管理画面ページの表示
+     * Render admin page
      */
     public function render_admin_page() {
-        // 権限チェック
+        // Permission check
         if (!current_user_can('manage_options')) {
-            wp_die(__('このページにアクセスする権限がありません。', 'toolzoo'));
+            wp_die(__('You do not have permission to access this page.', 'toolzoo'));
         }
 
-        // ツール個別表示かどうかを判定
+        // Determine if displaying individual tool
         $tool_id = isset($_GET['tool']) ? sanitize_text_field($_GET['tool']) : '';
 
         echo '<div class="wrap toolzoo-admin-page">';
@@ -63,14 +63,14 @@ class Toolzoo_Admin {
     }
 
     /**
-     * ツール一覧の表示
+     * Render tools list
      */
     private function render_tools_list() {
         ?>
-        <h1><?php echo esc_html(get_admin_page_title()); ?> - 便利ツール一覧</h1>
+        <h1><?php echo esc_html(get_admin_page_title()); ?> - <?php esc_html_e('Useful Tools List', 'toolzoo'); ?></h1>
 
         <div class="toolzoo-admin-intro">
-            <p>このプラグインは便利なツール集を提供します。各ツールをショートコードで記事やページに埋め込むことができます。</p>
+            <p><?php esc_html_e('This plugin provides a collection of useful tools. Each tool can be embedded in posts or pages using shortcodes.', 'toolzoo'); ?></p>
         </div>
 
         <div class="toolzoo-tools-grid">
@@ -85,9 +85,9 @@ class Toolzoo_Admin {
     }
 
     /**
-     * 個別ツールカードの表示
+     * Render individual tool card
      *
-     * @param array $tool ツール情報
+     * @param array $tool Tool information
      */
     private function render_tool_card($tool) {
         $admin_url = admin_url('admin.php?page=toolzoo-tools&tool=' . $tool['id']);
@@ -100,26 +100,26 @@ class Toolzoo_Admin {
 
             <div class="toolzoo-tool-body">
                 <div class="toolzoo-tool-section">
-                    <h3>説明</h3>
+                    <h3><?php esc_html_e('Description', 'toolzoo'); ?></h3>
                     <p><?php echo esc_html($tool['description']); ?></p>
                 </div>
 
                 <div class="toolzoo-tool-section">
-                    <h3>ショートコード</h3>
+                    <h3><?php esc_html_e('Shortcode', 'toolzoo'); ?></h3>
                     <div class="toolzoo-shortcode-wrapper">
                         <code class="toolzoo-shortcode"><?php echo esc_html($tool['shortcode']); ?></code>
                         <button
                             class="button button-secondary toolzoo-copy-btn"
                             data-shortcode="<?php echo esc_attr($tool['shortcode']); ?>">
-                            コピー
+                            <?php esc_html_e('Copy', 'toolzoo'); ?>
                         </button>
                     </div>
                 </div>
 
                 <div class="toolzoo-tool-section">
-                    <h3>動作確認</h3>
+                    <h3><?php esc_html_e('Preview', 'toolzoo'); ?></h3>
                     <a href="<?php echo esc_url($admin_url); ?>" class="button button-primary">
-                        管理画面で確認
+                        <?php esc_html_e('View in Admin', 'toolzoo'); ?>
                     </a>
                 </div>
             </div>
@@ -128,9 +128,9 @@ class Toolzoo_Admin {
     }
 
     /**
-     * 個別ツールの動作確認表示
+     * Render individual tool preview
      *
-     * @param string $tool_id ツールID
+     * @param string $tool_id Tool ID
      */
     private function render_tool_preview($tool_id) {
         $tools = $this->get_tools_list();
@@ -144,45 +144,46 @@ class Toolzoo_Admin {
         }
 
         if (!$tool) {
-            echo '<div class="notice notice-error"><p>ツールが見つかりません。</p></div>';
+            echo '<div class="notice notice-error"><p>' . esc_html__('Tool not found.', 'toolzoo') . '</p></div>';
             return;
         }
 
         echo '<div class="toolzoo-admin-tool-preview">';
         echo '<h2>' . esc_html($tool['name']) . '</h2>';
-        echo '<p><a href="' . esc_url(admin_url('admin.php?page=toolzoo-tools')) . '" class="button">&laquo; 一覧に戻る</a></p>';
+        echo '<p><a href="' . esc_url(admin_url('admin.php?page=toolzoo-tools')) . '" class="button">&laquo; ' . esc_html__('Back to List', 'toolzoo') . '</a></p>';
         echo '<hr style="margin: 20px 0;">';
 
-        // ツールを実際に表示
+        // Display the tool
         if (class_exists($tool['class'])) {
             $instance = new $tool['class']();
             echo $instance->render();
         } else {
-            echo '<p>ツールクラスが見つかりません: ' . esc_html($tool['class']) . '</p>';
+            /* translators: %s: class name */
+            echo '<p>' . sprintf(esc_html__('Tool class not found: %s', 'toolzoo'), esc_html($tool['class'])) . '</p>';
         }
 
         echo '</div>';
     }
 
     /**
-     * ツールリストの取得
+     * Get tools list
      *
-     * @return array ツール情報の配列
+     * @return array Array of tool information
      */
     private function get_tools_list() {
         return array(
             array(
                 'id'          => 'password',
-                'name'        => 'パスワード生成ツール',
-                'description' => 'ランダムなパスワードを20個一度に生成できるツールです。文字数、使用する文字種別（数字、大文字、小文字、記号）をカスタマイズできます。生成されたパスワードは個別または一括でコピー可能です。',
+                'name'        => __('Password Generator', 'toolzoo'),
+                'description' => __('A tool that generates 20 random passwords at once. You can customize the length and character types (numbers, uppercase, lowercase, symbols). Generated passwords can be copied individually or all at once.', 'toolzoo'),
                 'shortcode'   => '[toolzoo_password]',
                 'class'       => 'Toolzoo_Password_Generator',
                 'icon'        => 'dashicons-lock',
             ),
             array(
                 'id'          => 'nengo',
-                'name'        => '年号一覧表示',
-                'description' => '日本の元号（明治～令和）と西暦の対応表を表示します。年号の変換や確認に便利なツールです。検索機能により目的の年をすばやく見つけることができます。',
+                'name'        => __('Japanese Era List', 'toolzoo'),
+                'description' => __('Displays a correspondence table between Japanese era names (Meiji to Reiwa) and Western calendar years. A convenient tool for converting and checking era years. The search function allows you to quickly find the desired year.', 'toolzoo'),
                 'shortcode'   => '[toolzoo_nengo]',
                 'class'       => 'Toolzoo_Nengo_List',
                 'icon'        => 'dashicons-calendar-alt',
@@ -191,12 +192,12 @@ class Toolzoo_Admin {
     }
 
     /**
-     * 管理画面用CSS/JSの読み込み
+     * Enqueue admin CSS/JS
      *
-     * @param string $hook 現在のページフック
+     * @param string $hook Current page hook
      */
     public function enqueue_admin_assets($hook) {
-        // ToolZooページでのみ読み込み
+        // Load only on ToolZoo page
         if ($hook !== 'toplevel_page_toolzoo-tools') {
             return;
         }
@@ -218,7 +219,7 @@ class Toolzoo_Admin {
             true
         );
 
-        // 個別ツールの表示時は、そのツールのアセットも読み込む
+        // When displaying individual tool, also load that tool's assets
         $tool_id = isset($_GET['tool']) ? sanitize_text_field($_GET['tool']) : '';
         if ($tool_id) {
             $this->enqueue_tool_assets($tool_id);
@@ -226,12 +227,12 @@ class Toolzoo_Admin {
     }
 
     /**
-     * 個別ツールのアセットを読み込み
+     * Enqueue individual tool assets
      *
-     * @param string $tool_id ツールID
+     * @param string $tool_id Tool ID
      */
     private function enqueue_tool_assets($tool_id) {
-        // パスワード生成ツール
+        // Password generator tool
         if ($tool_id === 'password') {
             wp_enqueue_style(
                 'toolzoo-password',
@@ -248,7 +249,7 @@ class Toolzoo_Admin {
             );
         }
 
-        // 年号一覧ツール
+        // Japanese era list tool
         if ($tool_id === 'nengo') {
             wp_enqueue_style(
                 'toolzoo-nengo',

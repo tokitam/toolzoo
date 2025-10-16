@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ToolZoo
  * Plugin URI: https://github.com/yourusername/toolzoo
- * Description: 便利なツール集を提供するWordPressプラグイン。パスワード生成、年号一覧表示などの機能を含みます。
+ * Description: A WordPress plugin that provides useful tools including password generation, Japanese era list display, and more.
  * Version: 1.0.0
  * Author: Your Name
  * Author URI: https://yourwebsite.com
@@ -12,24 +12,24 @@
  * Domain Path: /languages
  */
 
-// セキュリティ: 直接アクセスを防止
+// Security: Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
 }
 
-// プラグインの定数定義
+// Plugin constants definition
 define('TOOLZOO_VERSION', '1.0.0');
 define('TOOLZOO_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('TOOLZOO_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('TOOLZOO_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
 /**
- * メインクラスの読み込み
+ * Load main class
  */
 require_once TOOLZOO_PLUGIN_DIR . 'includes/class-toolzoo.php';
 
 /**
- * プラグインの初期化
+ * Initialize plugin
  */
 function toolzoo_init() {
     $toolzoo = new Toolzoo();
@@ -38,19 +38,19 @@ function toolzoo_init() {
 add_action('plugins_loaded', 'toolzoo_init');
 
 /**
- * プラグイン有効化時の処理
+ * Plugin activation hook
  */
 function toolzoo_activate() {
-    // 将来的な処理のためのプレースホルダー
+    // Placeholder for future processing
     flush_rewrite_rules();
 }
 register_activation_hook(__FILE__, 'toolzoo_activate');
 
 /**
- * プラグイン無効化時の処理
+ * Plugin deactivation hook
  */
 function toolzoo_deactivate() {
-    // 将来的な処理のためのプレースホルダー
+    // Placeholder for future processing
     flush_rewrite_rules();
 }
 register_deactivation_hook(__FILE__, 'toolzoo_deactivate');

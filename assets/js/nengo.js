@@ -1,5 +1,5 @@
 /**
- * 年号一覧表示ツール JavaScript
+ * Japanese Era List Display Tool JavaScript
  *
  * @package ToolZoo
  */
@@ -7,34 +7,34 @@
 (function() {
     'use strict';
 
-    // 年号データ定義
+    // Era data definition
     const eraData = [
         {
-            name: '明治',
+            name: 'Meiji',
             nameEn: 'meiji',
             startYear: 1868,
             endYear: 1912
         },
         {
-            name: '大正',
+            name: 'Taisho',
             nameEn: 'taisho',
             startYear: 1912,
             endYear: 1926
         },
         {
-            name: '昭和',
+            name: 'Showa',
             nameEn: 'showa',
             startYear: 1926,
             endYear: 1989
         },
         {
-            name: '平成',
+            name: 'Heisei',
             nameEn: 'heisei',
             startYear: 1989,
             endYear: 2019
         },
         {
-            name: '令和',
+            name: 'Reiwa',
             nameEn: 'reiwa',
             startYear: 2019,
             endYear: null
@@ -42,35 +42,35 @@
     ];
 
     /**
-     * 初期化
+     * Initialize
      */
     document.addEventListener('DOMContentLoaded', function() {
         initNengoList();
     });
 
     /**
-     * 年号一覧の初期化
+     * Initialize era list
      */
     function initNengoList() {
-        // データ生成
+        // Generate data
         const startYear = 1868;
         const endYear = new Date().getFullYear();
         const data = generateNengoList(startYear, endYear);
 
-        // テーブル生成
+        // Generate table
         displayNengoTable(data);
 
-        // イベントリスナー設定
+        // Setup event listeners
         setupEventListeners();
 
-        // 現在年にスクロール
+        // Scroll to current year
         setTimeout(function() {
             scrollToCurrentYear();
         }, 100);
     }
 
     /**
-     * 年号リストデータを生成
+     * Generate era list data
      */
     function generateNengoList(startYear, endYear) {
         const rows = [];
@@ -93,7 +93,7 @@
     }
 
     /**
-     * 年号を計算
+     * Calculate era year
      */
     function calculateNengo(year, eraNameEn) {
         const era = eraData.find(function(e) {
@@ -102,24 +102,26 @@
 
         if (!era) return '-';
 
-        // 年号範囲外の場合
+        // If outside era range
         if (year < era.startYear || (era.endYear && year > era.endYear)) {
             return '-';
         }
 
-        // 年号年を計算
+        // Calculate era year
         const nengoYear = year - era.startYear + 1;
 
-        // 元年表示
+        // Display first year
         if (nengoYear === 1) {
-            return '元年';
+            return typeof toolzooNengoL10n !== 'undefined' && toolzooNengoL10n.yearOne
+                ? toolzooNengoL10n.yearOne
+                : 'Year 1';
         }
 
         return nengoYear.toString();
     }
 
     /**
-     * 改元年かどうかを判定
+     * Check if it's an era change year
      */
     function isKaigenYear(year) {
         const kaiGenYears = [1868, 1912, 1926, 1989, 2019];
@@ -127,7 +129,7 @@
     }
 
     /**
-     * テーブルを表示
+     * Display table
      */
     function displayNengoTable(rows) {
         const container = document.getElementById('toolzoo-nengo-table-container');
@@ -137,22 +139,31 @@
     }
 
     /**
-     * テーブルHTMLを生成
+     * Generate table HTML
      */
     function renderTable(rows) {
         let html = '<table class="toolzoo-nengo-list-table">';
 
-        // ヘッダー
+        // Get localized strings with fallbacks
+        const l10n = typeof toolzooNengoL10n !== 'undefined' ? toolzooNengoL10n : {};
+        const westernCalendar = l10n.westernCalendar || 'Western Calendar';
+        const meiji = l10n.meiji || 'Meiji';
+        const taisho = l10n.taisho || 'Taisho';
+        const showa = l10n.showa || 'Showa';
+        const heisei = l10n.heisei || 'Heisei';
+        const reiwa = l10n.reiwa || 'Reiwa';
+
+        // Header
         html += '<thead><tr>';
-        html += '<th>西暦</th>';
-        html += '<th>明治</th>';
-        html += '<th>大正</th>';
-        html += '<th>昭和</th>';
-        html += '<th>平成</th>';
-        html += '<th>令和</th>';
+        html += '<th>' + escapeHtml(westernCalendar) + '</th>';
+        html += '<th>' + escapeHtml(meiji) + '</th>';
+        html += '<th>' + escapeHtml(taisho) + '</th>';
+        html += '<th>' + escapeHtml(showa) + '</th>';
+        html += '<th>' + escapeHtml(heisei) + '</th>';
+        html += '<th>' + escapeHtml(reiwa) + '</th>';
         html += '</tr></thead>';
 
-        // ボディ
+        // Body
         html += '<tbody>';
 
         rows.forEach(function(row) {
@@ -180,7 +191,7 @@
     }
 
     /**
-     * HTMLエスケープ
+     * HTML escape
      */
     function escapeHtml(text) {
         if (typeof text !== 'string') {
@@ -197,10 +208,10 @@
     }
 
     /**
-     * イベントリスナーを設定
+     * Setup event listeners
      */
     function setupEventListeners() {
-        // 年代ジャンプボタン
+        // Era jump buttons
         const jumpButtons = document.querySelectorAll('.toolzoo-nengo-jump-btn');
         jumpButtons.forEach(function(button) {
             button.addEventListener('click', function() {
@@ -209,7 +220,7 @@
             });
         });
 
-        // トップへスクロールボタン
+        // Scroll to top button
         const scrollTopBtn = document.getElementById('toolzoo-scroll-top-btn');
         if (scrollTopBtn) {
             scrollTopBtn.addEventListener('click', function() {
@@ -219,7 +230,7 @@
     }
 
     /**
-     * 現在年へスクロール
+     * Scroll to current year
      */
     function scrollToCurrentYear() {
         const currentYear = new Date().getFullYear();
@@ -234,7 +245,7 @@
     }
 
     /**
-     * 指定年代へジャンプ
+     * Jump to specified era
      */
     function jumpToEra(eraNameEn) {
         const eraStartYear = {
@@ -256,13 +267,13 @@
                 block: 'start'
             });
 
-            // ハイライト効果
+            // Highlight effect
             highlightRow(targetRow);
         }
     }
 
     /**
-     * 行をハイライト
+     * Highlight row
      */
     function highlightRow(row) {
         row.style.transition = 'background-color 0.5s';
@@ -275,7 +286,7 @@
     }
 
     /**
-     * トップへスクロール
+     * Scroll to top
      */
     function scrollToTop() {
         const container = document.getElementById('toolzoo-nengo-table-container');
@@ -286,7 +297,7 @@
             });
         }
 
-        // ページ全体もトップへ
+        // Also scroll entire page to top
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
