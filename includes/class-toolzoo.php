@@ -37,6 +37,7 @@ class Toolzoo {
     private function load_classes() {
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-password-generator.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-nengo-list.php';
+        require_once TOOLZOO_PLUGIN_DIR . 'includes/class-all-shortcode.php';
     }
 
     /**
@@ -55,6 +56,7 @@ class Toolzoo {
     private function register_shortcodes() {
         add_shortcode('toolzoo_password', array($this, 'password_shortcode'));
         add_shortcode('toolzoo_nengo', array($this, 'nengo_shortcode'));
+        add_shortcode('toolzoo_all', array($this, 'all_shortcode'));
     }
 
     /**
@@ -77,6 +79,17 @@ class Toolzoo {
     public function nengo_shortcode($atts) {
         $list = new Toolzoo_Nengo_List();
         return $list->render();
+    }
+
+    /**
+     * All tools list shortcode
+     *
+     * @param array $atts Shortcode attributes
+     * @return string HTML output
+     */
+    public function all_shortcode($atts) {
+        $shortcode = new Toolzoo_All_Shortcode();
+        return $shortcode->render($atts);
     }
 
     /**

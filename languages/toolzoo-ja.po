@@ -165,6 +165,33 @@ msgid "Loading data..."
 msgstr "データを読み込んでいます..."
 
 #: includes/class-nengo-list.php:60
-#: includes/class-admin.php:153
 msgid "Back to Top"
 msgstr "ページトップへ"
+
+#: includes/class-all-shortcode.php:44
+msgid "Password Generator"
+msgstr "パスワード生成ツール"
+
+#: includes/class-all-shortcode.php:45
+msgid "A tool that generates 20 random passwords at once. You can customize the length and character types (numbers, uppercase, lowercase, symbols). Generated passwords can be copied individually or all at once."
+msgstr "ランダムなパスワードを20個一度に生成できるツールです。文字数、使用する文字種別（数字、大文字、小文字、記号）をカスタマイズできます。生成されたパスワードは個別または一括でコピー可能です。"
+
+#: includes/class-all-shortcode.php:51
+msgid "Japanese Era List"
+msgstr "年号一覧表"
+
+#: includes/class-all-shortcode.php:52
+msgid "Displays a correspondence table between Japanese era names (Meiji to Reiwa) and Western calendar years. A convenient tool for converting and checking era years. The search function allows you to quickly find the desired year."
+msgstr "日本の元号（明治～令和）と西暦の対応表を表示します。年号の変換や確認に便利なツールです。検索機能により目的の年をすばやく見つけることができます。"
+
+#: includes/class-all-shortcode.php:127
+msgid "Use Tool"
+msgstr "ツールを使う"
+
+#: includes/class-all-shortcode.php:158
+msgid "Tool not found."
+msgstr "ツールが見つかりません。"
+
+#: includes/class-all-shortcode.php:172
+msgid "Tool not available."
+msgstr "ツールは利用できません。"
