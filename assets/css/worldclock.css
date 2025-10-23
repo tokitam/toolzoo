@@ -1,0 +1,219 @@
+/**
+ * World Clock Styles
+ */
+
+/* ===================================
+   Container
+   =================================== */
+.toolzoo-worldclock-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===================================
+   Header
+   =================================== */
+.toolzoo-worldclock-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.toolzoo-worldclock-header h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.toolzoo-worldclock-description {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* ===================================
+   City List
+   =================================== */
+.toolzoo-worldclock-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+/* ===================================
+   City Card
+   =================================== */
+.toolzoo-worldclock-card {
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.toolzoo-worldclock-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+/* Current location highlight */
+.toolzoo-worldclock-current {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border-color: #667eea;
+}
+
+.toolzoo-worldclock-current .toolzoo-worldclock-city-name,
+.toolzoo-worldclock-current .toolzoo-worldclock-time-info {
+    color: #fff;
+}
+
+/* ===================================
+   City Header
+   =================================== */
+.toolzoo-worldclock-city-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.toolzoo-worldclock-icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.toolzoo-worldclock-city-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.toolzoo-worldclock-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* ===================================
+   Time Info
+   =================================== */
+.toolzoo-worldclock-time-info {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.toolzoo-worldclock-time {
+    margin-bottom: 4px;
+}
+
+.toolzoo-worldclock-time strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.toolzoo-worldclock-current .toolzoo-worldclock-time strong {
+    color: #fff;
+}
+
+.toolzoo-worldclock-date {
+    margin-bottom: 4px;
+}
+
+.toolzoo-worldclock-gmt {
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #999;
+}
+
+.toolzoo-worldclock-current .toolzoo-worldclock-gmt {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+@media screen and (max-width: 768px) {
+    .toolzoo-worldclock-list {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 12px;
+    }
+
+    .toolzoo-worldclock-card {
+        padding: 12px;
+    }
+
+    .toolzoo-worldclock-header h3 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .toolzoo-worldclock-container {
+        padding: 16px;
+    }
+
+    .toolzoo-worldclock-list {
+        grid-template-columns: 1fr;
+    }
+
+    .toolzoo-worldclock-header h3 {
+        font-size: 22px;
+    }
+
+    .toolzoo-worldclock-description {
+        font-size: 13px;
+    }
+}
+
+/* ===================================
+   Accessibility
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    .toolzoo-worldclock-card {
+        transition: none;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .toolzoo-worldclock-card {
+        border: 3px solid #000;
+    }
+
+    .toolzoo-worldclock-current {
+        background: #000;
+        color: #fff;
+    }
+}
+
+/* ===================================
+   Print
+   =================================== */
+@media print {
+    .toolzoo-worldclock-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+
+    .toolzoo-worldclock-current {
+        background: #000 !important;
+        color: #fff !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}

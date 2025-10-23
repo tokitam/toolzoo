@@ -38,6 +38,7 @@ class Toolzoo {
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-password-generator.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-nengo-list.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-all-shortcode.php';
+        require_once TOOLZOO_PLUGIN_DIR . 'includes/class-worldclock.php';
     }
 
     /**
@@ -57,6 +58,7 @@ class Toolzoo {
         add_shortcode('toolzoo_password', array($this, 'password_shortcode'));
         add_shortcode('toolzoo_nengo', array($this, 'nengo_shortcode'));
         add_shortcode('toolzoo_all', array($this, 'all_shortcode'));
+        add_shortcode('toolzoo_worldclock', array($this, 'worldclock_shortcode'));
     }
 
     /**
@@ -90,6 +92,17 @@ class Toolzoo {
     public function all_shortcode($atts) {
         $shortcode = new Toolzoo_All_Shortcode();
         return $shortcode->render($atts);
+    }
+
+    /**
+     * World clock shortcode
+     *
+     * @param array $atts Shortcode attributes
+     * @return string HTML output
+     */
+    public function worldclock_shortcode($atts) {
+        $worldclock = new Toolzoo_Worldclock();
+        return $worldclock->render();
     }
 
     /**
