@@ -188,6 +188,14 @@ class Toolzoo_Admin {
                 'class'       => 'Toolzoo_Nengo_List',
                 'icon'        => 'dashicons-calendar-alt',
             ),
+            array(
+                'id'          => 'worldclock',
+                'name'        => __('World Clock', 'toolzoo'),
+                'description' => __('Displays current time in 30 major cities around the world. Automatically sorted from your timezone eastward. Updates every second.', 'toolzoo'),
+                'shortcode'   => '[toolzoo_worldclock]',
+                'class'       => 'Toolzoo_Worldclock',
+                'icon'        => 'dashicons-clock',
+            ),
         );
     }
 
@@ -260,6 +268,23 @@ class Toolzoo_Admin {
             wp_enqueue_script(
                 'toolzoo-nengo',
                 TOOLZOO_PLUGIN_URL . 'assets/js/nengo.js',
+                array(),
+                TOOLZOO_VERSION,
+                true
+            );
+        }
+
+        // World clock tool
+        if ($tool_id === 'worldclock') {
+            wp_enqueue_style(
+                'toolzoo-worldclock',
+                TOOLZOO_PLUGIN_URL . 'assets/css/worldclock.css',
+                array(),
+                TOOLZOO_VERSION
+            );
+            wp_enqueue_script(
+                'toolzoo-worldclock',
+                TOOLZOO_PLUGIN_URL . 'assets/js/worldclock.js',
                 array(),
                 TOOLZOO_VERSION,
                 true

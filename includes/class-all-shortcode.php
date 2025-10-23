@@ -61,6 +61,13 @@ class Toolzoo_All_Shortcode {
                 'icon'        => '📅',
                 'slug'        => 'nengo',
             ),
+            array(
+                'id'          => 'worldclock',
+                'name'        => __('World Clock', 'toolzoo'),
+                'description' => __('Displays current time in 30 major cities around the world. Automatically sorted from your timezone eastward. Updates every second.', 'toolzoo'),
+                'icon'        => '🌍',
+                'slug'        => 'worldclock',
+            ),
         );
     }
 
@@ -167,6 +174,10 @@ class Toolzoo_All_Shortcode {
             case 'nengo':
                 $list = new Toolzoo_Nengo_List();
                 return $list->render();
+
+            case 'worldclock':
+                $worldclock = new Toolzoo_Worldclock();
+                return $worldclock->render();
 
             default:
                 return '<p>' . esc_html__('Tool not available.', 'toolzoo') . '</p>';

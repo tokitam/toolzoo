@@ -168,30 +168,177 @@ msgstr "データを読み込んでいます..."
 msgid "Back to Top"
 msgstr "ページトップへ"
 
-#: includes/class-all-shortcode.php:44
-msgid "Password Generator"
-msgstr "パスワード生成ツール"
-
-#: includes/class-all-shortcode.php:45
-msgid "A tool that generates 20 random passwords at once. You can customize the length and character types (numbers, uppercase, lowercase, symbols). Generated passwords can be copied individually or all at once."
-msgstr "ランダムなパスワードを20個一度に生成できるツールです。文字数、使用する文字種別（数字、大文字、小文字、記号）をカスタマイズできます。生成されたパスワードは個別または一括でコピー可能です。"
-
-#: includes/class-all-shortcode.php:51
-msgid "Japanese Era List"
-msgstr "年号一覧表"
-
-#: includes/class-all-shortcode.php:52
-msgid "Displays a correspondence table between Japanese era names (Meiji to Reiwa) and Western calendar years. A convenient tool for converting and checking era years. The search function allows you to quickly find the desired year."
-msgstr "日本の元号（明治～令和）と西暦の対応表を表示します。年号の変換や確認に便利なツールです。検索機能により目的の年をすばやく見つけることができます。"
-
 #: includes/class-all-shortcode.php:127
 msgid "Use Tool"
 msgstr "ツールを使う"
 
-#: includes/class-all-shortcode.php:158
-msgid "Tool not found."
-msgstr "ツールが見つかりません。"
-
 #: includes/class-all-shortcode.php:172
 msgid "Tool not available."
 msgstr "ツールは利用できません。"
+
+#: includes/class-worldclock.php
+msgid "World Clock"
+msgstr "世界時計"
+
+msgid "Current time in 30 major cities around the world, sorted from your timezone eastward."
+msgstr "世界の主要30都市の現在時刻を表示します。あなたのタイムゾーンから東回りに並べ替えられます。"
+
+msgid "Current Time:"
+msgstr "現在時刻:"
+
+msgid "Date:"
+msgstr "日付:"
+
+msgid "Your Location"
+msgstr "現在地"
+
+msgid "London"
+msgstr "ロンドン"
+
+msgid "United Kingdom"
+msgstr "イギリス"
+
+msgid "New York"
+msgstr "ニューヨーク"
+
+msgid "United States"
+msgstr "アメリカ"
+
+msgid "Tokyo"
+msgstr "東京"
+
+msgid "Japan"
+msgstr "日本"
+
+msgid "Paris"
+msgstr "パリ"
+
+msgid "France"
+msgstr "フランス"
+
+msgid "Singapore"
+msgstr "シンガポール"
+
+msgid "Amsterdam"
+msgstr "アムステルダム"
+
+msgid "Netherlands"
+msgstr "オランダ"
+
+msgid "Seoul"
+msgstr "ソウル"
+
+msgid "South Korea"
+msgstr "韓国"
+
+msgid "Dubai"
+msgstr "ドバイ"
+
+msgid "United Arab Emirates"
+msgstr "アラブ首長国連邦"
+
+msgid "Melbourne"
+msgstr "メルボルン"
+
+msgid "Australia"
+msgstr "オーストラリア"
+
+msgid "Berlin"
+msgstr "ベルリン"
+
+msgid "Germany"
+msgstr "ドイツ"
+
+msgid "Copenhagen"
+msgstr "コペンハーゲン"
+
+msgid "Denmark"
+msgstr "デンマーク"
+
+msgid "Sydney"
+msgstr "シドニー"
+
+msgid "Vienna"
+msgstr "ウィーン"
+
+msgid "Austria"
+msgstr "オーストリア"
+
+msgid "Madrid"
+msgstr "マドリード"
+
+msgid "Spain"
+msgstr "スペイン"
+
+msgid "Shanghai"
+msgstr "上海"
+
+msgid "China"
+msgstr "中国"
+
+msgid "Stockholm"
+msgstr "ストックホルム"
+
+msgid "Sweden"
+msgstr "スウェーデン"
+
+msgid "Beijing"
+msgstr "北京"
+
+msgid "Hong Kong"
+msgstr "香港"
+
+msgid "Zurich"
+msgstr "チューリッヒ"
+
+msgid "Switzerland"
+msgstr "スイス"
+
+msgid "Frankfurt"
+msgstr "フランクフルト"
+
+msgid "Los Angeles"
+msgstr "ロサンゼルス"
+
+msgid "Barcelona"
+msgstr "バルセロナ"
+
+msgid "Toronto"
+msgstr "トロント"
+
+msgid "Canada"
+msgstr "カナダ"
+
+msgid "Brussels"
+msgstr "ブリュッセル"
+
+msgid "Belgium"
+msgstr "ベルギー"
+
+msgid "Chicago"
+msgstr "シカゴ"
+
+msgid "Geneva"
+msgstr "ジュネーブ"
+
+msgid "San Francisco"
+msgstr "サンフランシスコ"
+
+msgid "Dublin"
+msgstr "ダブリン"
+
+msgid "Ireland"
+msgstr "アイルランド"
+
+msgid "Boston"
+msgstr "ボストン"
+
+msgid "Istanbul"
+msgstr "イスタンブール"
+
+msgid "Turkey"
+msgstr "トルコ"
+
+#: includes/class-all-shortcode.php:67
+msgid "Displays current time in 30 major cities around the world. Automatically sorted from your timezone eastward. Updates every second."
+msgstr "世界の主要30都市の現在時刻を表示します。あなたのタイムゾーンから東回りに自動で並べ替えられます。毎秒更新されます。"
