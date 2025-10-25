@@ -48,6 +48,11 @@ class Toolzoo_All_Shortcode {
     private function get_tools_list() {
         $tools = Toolzoo_Constants::get_tools_list();
 
+        // Filter out meta tools (all and links)
+        $tools = array_filter($tools, function($tool) {
+            return !in_array($tool['id'], array('all', 'links'));
+        });
+
         // Remap to shortcode-friendly format
         $result = array();
         foreach ($tools as $tool) {

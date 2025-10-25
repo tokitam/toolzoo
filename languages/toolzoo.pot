@@ -168,6 +168,14 @@ msgstr ""
 msgid "Displays all available tools as clickable cards. Users can view all ToolZoo tools in one place and access each tool directly from the list."
 msgstr ""
 
+#: includes/class-constants.php:42
+msgid "Tools Links"
+msgstr ""
+
+#: includes/class-constants.php:43
+msgid "Displays all ToolZoo tools as horizontal links. Great for navigation bars, sidebars, or page headers. Customizable with different styles and sizes."
+msgstr ""
+
 #: includes/class-json-processor.php:31
 msgid "JSON Processor"
 msgstr ""
