@@ -35,6 +35,7 @@ class Toolzoo {
      * Load feature classes
      */
     private function load_classes() {
+        require_once TOOLZOO_PLUGIN_DIR . 'includes/class-constants.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-password-generator.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-nengo-list.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-all-shortcode.php';
