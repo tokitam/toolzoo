@@ -1,0 +1,271 @@
+/**
+ * ToolZoo Links Styles
+ */
+
+/* Container */
+.toolzoo-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+/* Individual Link */
+.toolzoo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    color: #0073aa;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.toolzoo-link:hover {
+    color: #005a87;
+    background-color: #f0f0f0;
+    text-decoration: underline;
+}
+
+.toolzoo-link:focus {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+}
+
+.toolzoo-link:active {
+    color: #004471;
+}
+
+/* Link Icon */
+.toolzoo-link-icon {
+    font-size: 1.2em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Link Text */
+.toolzoo-link-text {
+    font-size: 0.95em;
+}
+
+/* Separator */
+.toolzoo-links-separator {
+    color: #ccc;
+    font-weight: 300;
+    padding: 0 2px;
+    user-select: none;
+    display: inline;
+}
+
+/* Style Variations */
+
+/* Icon Text (Default) */
+.toolzoo-links-icon-text .toolzoo-link-icon {
+    display: inline-flex;
+}
+
+.toolzoo-links-icon-text .toolzoo-link-text {
+    display: inline;
+}
+
+/* Icon Only */
+.toolzoo-links-icon-only .toolzoo-link-icon {
+    display: inline-flex;
+}
+
+.toolzoo-links-icon-only .toolzoo-link-text {
+    display: none;
+}
+
+.toolzoo-links-icon-only .toolzoo-link {
+    padding: 8px;
+}
+
+/* Text Only */
+.toolzoo-links-text-only .toolzoo-link-icon {
+    display: none;
+}
+
+.toolzoo-links-text-only .toolzoo-link-text {
+    display: inline;
+}
+
+/* Size Variations */
+
+/* Small */
+.toolzoo-links-small .toolzoo-link {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.toolzoo-links-small .toolzoo-link-icon {
+    font-size: 1em;
+}
+
+.toolzoo-links-small .toolzoo-link-text {
+    font-size: 0.9em;
+}
+
+/* Medium (Default) */
+.toolzoo-links-medium .toolzoo-link {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.toolzoo-links-medium .toolzoo-link-icon {
+    font-size: 1.2em;
+}
+
+.toolzoo-links-medium .toolzoo-link-text {
+    font-size: 0.95em;
+}
+
+/* Large */
+.toolzoo-links-large .toolzoo-link {
+    padding: 10px 14px;
+    font-size: 16px;
+}
+
+.toolzoo-links-large .toolzoo-link-icon {
+    font-size: 1.4em;
+}
+
+.toolzoo-links-large .toolzoo-link-text {
+    font-size: 1em;
+}
+
+/* Active State */
+.toolzoo-link.active {
+    background-color: #0073aa;
+    color: white;
+    font-weight: 600;
+}
+
+.toolzoo-link.active:hover {
+    background-color: #005a87;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .toolzoo-links {
+        gap: 4px;
+    }
+
+    .toolzoo-link {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .toolzoo-links-separator {
+        padding: 0 2px;
+    }
+
+    .toolzoo-links-small .toolzoo-link {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+
+    .toolzoo-links-large .toolzoo-link {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .toolzoo-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .toolzoo-link {
+        display: flex;
+        width: 100%;
+        padding: 10px 12px;
+        border-bottom: 1px solid #eee;
+        justify-content: flex-start;
+    }
+
+    .toolzoo-link:last-child {
+        border-bottom: none;
+    }
+
+    .toolzoo-links-separator {
+        display: none;
+    }
+
+    .toolzoo-links-small .toolzoo-link {
+        padding: 8px 10px;
+    }
+
+    .toolzoo-links-medium .toolzoo-link {
+        padding: 10px 12px;
+    }
+
+    .toolzoo-links-large .toolzoo-link {
+        padding: 12px 14px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .toolzoo-links {
+        display: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+    .toolzoo-link {
+        border: 1px solid #0073aa;
+    }
+
+    .toolzoo-link:hover {
+        border-color: #005a87;
+    }
+
+    .toolzoo-links-separator {
+        border-left: 1px solid #666;
+        padding: 0 4px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .toolzoo-link {
+        color: #4a9eff;
+    }
+
+    .toolzoo-link:hover {
+        color: #8fc7ff;
+        background-color: #2a2a2a;
+    }
+
+    .toolzoo-links-separator {
+        color: #555;
+    }
+
+    .toolzoo-link.active {
+        background-color: #0973ba;
+        color: white;
+    }
+
+    .toolzoo-link.active:hover {
+        background-color: #0a5fa3;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .toolzoo-link {
+        transition: none;
+    }
+}

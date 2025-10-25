@@ -36,6 +36,17 @@ class Toolzoo_Constants {
                 'slug'        => 'all',
                 'emoji'       => '📦',
             ),
+            // ToolZoo Links Shortcode
+            array(
+                'id'          => 'links',
+                'name'        => __('Tools Links', 'toolzoo'),
+                'description' => __('Displays all ToolZoo tools as horizontal links. Great for navigation bars, sidebars, or page headers. Customizable with different styles and sizes.', 'toolzoo'),
+                'shortcode'   => '[toolzoo_links]',
+                'class'       => '',
+                'icon'        => 'dashicons-editor-ul',
+                'slug'        => 'links',
+                'emoji'       => '🔗',
+            ),
             // Password Generator Tool
             array(
                 'id'          => 'password',
