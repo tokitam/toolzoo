@@ -1,0 +1,509 @@
+/**
+ * JSON Processor Styles
+ */
+
+/* Main Container */
+.toolzoo-json-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Header */
+.toolzoo-json-header h3 {
+    margin: 0 0 8px 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.toolzoo-json-description {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Error Display */
+.toolzoo-json-error {
+    padding: 12px 15px;
+    background-color: #ffebee;
+    border-left: 4px solid #c62828;
+    color: #c62828;
+    border-radius: 3px;
+    font-size: 13px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tabs */
+.toolzoo-json-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #ddd;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.toolzoo-json-tab {
+    padding: 12px 20px;
+    cursor: pointer;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 2px;
+    margin-bottom: -2px;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    user-select: none;
+}
+
+.toolzoo-json-tab:hover {
+    background-color: #eeeeee;
+    color: #333;
+}
+
+.toolzoo-json-tab.active {
+    background: #ffffff;
+    border-bottom: 2px solid #0073aa;
+    position: relative;
+    bottom: -2px;
+    color: #0073aa;
+    border-bottom-color: transparent;
+}
+
+/* Main Content Area */
+.toolzoo-json-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    min-height: 400px;
+}
+
+/* Input Area */
+.toolzoo-json-input-area,
+.toolzoo-json-output-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toolzoo-json-label {
+    margin: 0;
+}
+
+.toolzoo-json-label h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Textarea */
+.toolzoo-json-input,
+.toolzoo-json-output {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+    color: #333;
+    overflow-y: auto;
+    flex: 1;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+.toolzoo-json-input:focus,
+.toolzoo-json-output:focus {
+    outline: none;
+    border-color: #0073aa;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+.toolzoo-json-output {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.toolzoo-json-output:focus {
+    background: #f9f9f9;
+}
+
+/* Button Groups */
+.toolzoo-json-input-buttons,
+.toolzoo-json-output-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Button */
+.toolzoo-json-button {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #0073aa;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.toolzoo-json-button:hover {
+    background: #005a87;
+}
+
+.toolzoo-json-button:active {
+    background: #004471;
+}
+
+.toolzoo-json-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Status Bar */
+.toolzoo-json-status {
+    padding: 10px 15px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.toolzoo-json-status.valid {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-color: #4caf50;
+}
+
+.toolzoo-json-status.invalid {
+    background: #ffebee;
+    color: #c62828;
+    border-color: #f44336;
+}
+
+/* Syntax Highlighting Classes */
+.json-key {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.json-string {
+    color: #228822;
+}
+
+.json-number {
+    color: #990099;
+}
+
+.json-keyword {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.json-null {
+    color: #666666;
+    font-style: italic;
+}
+
+.json-bracket {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Tree View Styles */
+.tree-node {
+    padding: 5px 0;
+    cursor: pointer;
+    user-select: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.tree-node::before {
+    content: '▼ ';
+    color: #666;
+    margin-right: 5px;
+    display: inline-block;
+    width: 15px;
+}
+
+.tree-node.collapsed::before {
+    content: '▶ ';
+}
+
+.tree-item {
+    padding: 3px 0;
+    color: #333;
+    margin-left: 10px;
+}
+
+.tree-key {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .toolzoo-json-main {
+        grid-template-columns: 1fr;
+    }
+
+    .toolzoo-json-input,
+    .toolzoo-json-output {
+        min-height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .toolzoo-json-container {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .toolzoo-json-main {
+        gap: 12px;
+    }
+
+    .toolzoo-json-input,
+    .toolzoo-json-output {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .toolzoo-json-tabs {
+        flex-wrap: wrap;
+    }
+
+    .toolzoo-json-tab {
+        padding: 10px 15px;
+        font-size: 13px;
+        margin-right: 4px;
+    }
+
+    .toolzoo-json-button {
+        padding: 7px 12px;
+        font-size: 12px;
+        flex: 1;
+        min-width: 70px;
+    }
+
+    .toolzoo-json-input-buttons,
+    .toolzoo-json-output-buttons {
+        gap: 6px;
+    }
+
+    .toolzoo-json-header h3 {
+        font-size: 16px;
+    }
+
+    .toolzoo-json-label h4 {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .toolzoo-json-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .toolzoo-json-main {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        min-height: 300px;
+    }
+
+    .toolzoo-json-input,
+    .toolzoo-json-output {
+        font-size: 11px;
+        padding: 6px;
+        min-height: 250px;
+    }
+
+    .toolzoo-json-tab {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin-right: 2px;
+    }
+
+    .toolzoo-json-button {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .toolzoo-json-status {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .toolzoo-json-header h3 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .toolzoo-json-button,
+    .toolzoo-json-tabs {
+        display: none;
+    }
+
+    .toolzoo-json-container {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    .toolzoo-json-input,
+    .toolzoo-json-output {
+        border: 1px solid #999;
+        background: white;
+        color: black;
+    }
+}
+
+/* Accessibility */
+.toolzoo-json-button:focus,
+.toolzoo-json-tab:focus,
+.toolzoo-json-input:focus,
+.toolzoo-json-output:focus {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+    .toolzoo-json-button {
+        border: 1px solid #000;
+    }
+
+    .toolzoo-json-input,
+    .toolzoo-json-output {
+        border: 1px solid #000;
+    }
+
+    .toolzoo-json-tab {
+        border: 1px solid #000;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .toolzoo-json-container {
+        background: #2a2a2a;
+        border-color: #444;
+        color: #e0e0e0;
+    }
+
+    .toolzoo-json-header h3 {
+        color: #e0e0e0;
+    }
+
+    .toolzoo-json-input,
+    .toolzoo-json-output {
+        background: #1e1e1e;
+        border-color: #444;
+        color: #e0e0e0;
+    }
+
+    .toolzoo-json-input:focus,
+    .toolzoo-json-output:focus {
+        border-color: #4a9eff;
+        background: #252525;
+    }
+
+    .toolzoo-json-tab {
+        background: #333;
+        border-color: #444;
+        color: #aaa;
+    }
+
+    .toolzoo-json-tab:hover {
+        background: #3a3a3a;
+        color: #ddd;
+    }
+
+    .toolzoo-json-tab.active {
+        background: #2a2a2a;
+        color: #4a9eff;
+        border-bottom-color: #4a9eff;
+    }
+
+    .toolzoo-json-button {
+        background: #0973ba;
+        border-color: #0973ba;
+    }
+
+    .toolzoo-json-button:hover {
+        background: #0a5fa3;
+    }
+
+    .toolzoo-json-status {
+        background: #333;
+        border-color: #444;
+        color: #aaa;
+    }
+
+    .toolzoo-json-error {
+        background: #4a0e0e;
+        border-color: #c62828;
+        color: #ff6b6b;
+    }
+
+    .json-key {
+        color: #4a9eff;
+    }
+
+    .json-string {
+        color: #55cc55;
+    }
+
+    .json-number {
+        color: #dd88ff;
+    }
+
+    .json-keyword {
+        color: #ffaa44;
+    }
+
+    .tree-node {
+        color: #4a9eff;
+    }
+
+    .tree-key {
+        color: #4a9eff;
+    }
+}

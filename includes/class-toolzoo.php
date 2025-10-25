@@ -39,6 +39,7 @@ class Toolzoo {
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-nengo-list.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-all-shortcode.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-worldclock.php';
+        require_once TOOLZOO_PLUGIN_DIR . 'includes/class-json-processor.php';
     }
 
     /**
@@ -59,6 +60,7 @@ class Toolzoo {
         add_shortcode('toolzoo_nengo', array($this, 'nengo_shortcode'));
         add_shortcode('toolzoo_all', array($this, 'all_shortcode'));
         add_shortcode('toolzoo_worldclock', array($this, 'worldclock_shortcode'));
+        add_shortcode('toolzoo_json', array($this, 'json_shortcode'));
     }
 
     /**
@@ -103,6 +105,17 @@ class Toolzoo {
     public function worldclock_shortcode($atts) {
         $worldclock = new Toolzoo_Worldclock();
         return $worldclock->render();
+    }
+
+    /**
+     * JSON processor shortcode
+     *
+     * @param array $atts Shortcode attributes
+     * @return string HTML output
+     */
+    public function json_shortcode($atts) {
+        $processor = new Toolzoo_JSON_Processor();
+        return $processor->render();
     }
 
     /**
