@@ -177,6 +177,12 @@ msgid "Tool not available."
 msgstr "ツールは利用できません。"
 
 #: includes/class-worldclock.php
+msgid "JSON Processor"
+msgstr "JSON成形ツール"
+
+msgid "Paste or enter JSON data to validate, format, minify, and view its structure. Use the tabs to switch between Pretty Print (formatted), Minify (compressed), and Tree View (hierarchical structure)."
+msgstr "JSONデータを貼り付けるか入力して、検証・整形・圧縮・構造表示ができます。タブを使用して、Pretty Print（整形済み）、Minify（圧縮）、Tree View（階層構造）を切り替えてください。"
+
 msgid "World Clock"
 msgstr "世界時計"
 

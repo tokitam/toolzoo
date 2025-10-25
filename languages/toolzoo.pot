@@ -159,3 +159,11 @@ msgstr ""
 #: includes/class-admin.php:153
 msgid "Back to Top"
 msgstr ""
+
+#: includes/class-json-processor.php:31
+msgid "JSON Processor"
+msgstr ""
+
+#: includes/class-json-processor.php:33
+msgid "Paste or enter JSON data to validate, format, minify, and view its structure. Use the tabs to switch between Pretty Print (formatted), Minify (compressed), and Tree View (hierarchical structure)."
+msgstr ""
