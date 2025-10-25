@@ -25,6 +25,17 @@ class Toolzoo_Constants {
      */
     public static function get_tools_list() {
         return array(
+            // All Tools Shortcode
+            array(
+                'id'          => 'all',
+                'name'        => __('All Tools List', 'toolzoo'),
+                'description' => __('Displays all available tools as clickable cards. Users can view all ToolZoo tools in one place and access each tool directly from the list.', 'toolzoo'),
+                'shortcode'   => '[toolzoo_all]',
+                'class'       => '',
+                'icon'        => 'dashicons-apps',
+                'slug'        => 'all',
+                'emoji'       => '📦',
+            ),
             // Password Generator Tool
             array(
                 'id'          => 'password',

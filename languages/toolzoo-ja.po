@@ -176,6 +176,14 @@ msgstr "ツールを使う"
 msgid "Tool not available."
 msgstr "ツールは利用できません。"
 
+#: includes/class-constants.php:31
+msgid "All Tools List"
+msgstr "すべてのツール一覧"
+
+#: includes/class-constants.php:32
+msgid "Displays all available tools as clickable cards. Users can view all ToolZoo tools in one place and access each tool directly from the list."
+msgstr "利用可能なすべてのツールをクリック可能なカード形式で表示します。ユーザーはすべての ToolZoo ツールを 1 か所で表示でき、リストから各ツールに直接アクセスできます。"
+
 #: includes/class-worldclock.php
 msgid "JSON Processor"
 msgstr "JSON成形ツール"

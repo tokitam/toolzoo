@@ -91,6 +91,7 @@ class Toolzoo_Admin {
      */
     private function render_tool_card($tool) {
         $admin_url = admin_url('admin.php?page=toolzoo-tools&tool=' . $tool['id']);
+        $has_class = !empty($tool['class']);
         ?>
         <div class="toolzoo-tool-card">
             <div class="toolzoo-tool-header">
@@ -116,12 +117,14 @@ class Toolzoo_Admin {
                     </div>
                 </div>
 
+                <?php if ($has_class) : ?>
                 <div class="toolzoo-tool-section">
                     <h3><?php esc_html_e('Preview', 'toolzoo'); ?></h3>
                     <a href="<?php echo esc_url($admin_url); ?>" class="button button-primary">
                         <?php esc_html_e('View in Admin', 'toolzoo'); ?>
                     </a>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
         <?php

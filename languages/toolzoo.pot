@@ -160,6 +160,14 @@ msgstr ""
 msgid "Back to Top"
 msgstr ""
 
+#: includes/class-constants.php:31
+msgid "All Tools List"
+msgstr ""
+
+#: includes/class-constants.php:32
+msgid "Displays all available tools as clickable cards. Users can view all ToolZoo tools in one place and access each tool directly from the list."
+msgstr ""
+
 #: includes/class-json-processor.php:31
 msgid "JSON Processor"
 msgstr ""
