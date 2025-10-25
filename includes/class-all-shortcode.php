@@ -46,29 +46,22 @@ class Toolzoo_All_Shortcode {
      * @return array Array of tool information
      */
     private function get_tools_list() {
-        return array(
-            array(
-                'id'          => 'password',
-                'name'        => __('Password Generator', 'toolzoo'),
-                'description' => __('A tool that generates 20 random passwords at once. You can customize the length and character types (numbers, uppercase, lowercase, symbols). Generated passwords can be copied individually or all at once.', 'toolzoo'),
-                'icon'        => '🔒',
-                'slug'        => 'password',
-            ),
-            array(
-                'id'          => 'nengo',
-                'name'        => __('Japanese Era List', 'toolzoo'),
-                'description' => __('Displays a correspondence table between Japanese era names (Meiji to Reiwa) and Western calendar years. A convenient tool for converting and checking era years. The search function allows you to quickly find the desired year.', 'toolzoo'),
-                'icon'        => '📅',
-                'slug'        => 'nengo',
-            ),
-            array(
-                'id'          => 'worldclock',
-                'name'        => __('World Clock', 'toolzoo'),
-                'description' => __('Displays current time in 30 major cities around the world. Automatically sorted from your timezone eastward. Updates every second.', 'toolzoo'),
-                'icon'        => '🌍',
-                'slug'        => 'worldclock',
-            ),
-        );
+        $tools = Toolzoo_Constants::get_tools_list();
+
+        // Remap to shortcode-friendly format
+        $result = array();
+        foreach ($tools as $tool) {
+            $result[] = array(
+                'id'          => $tool['id'],
+                'name'        => $tool['name'],
+                'description' => $tool['description'],
+                'icon'        => $tool['emoji'],
+                'slug'        => $tool['slug'],
+                'class'       => $tool['class'],
+            );
+        }
+
+        return $result;
     }
 
     /**
@@ -150,38 +143,20 @@ class Toolzoo_All_Shortcode {
      * @return string HTML output
      */
     private function render_single_tool($tool_id) {
-        $tools = $this->get_tools_list();
-        $tool = null;
-
-        // Find the tool
-        foreach ($tools as $t) {
-            if ($t['id'] === $tool_id) {
-                $tool = $t;
-                break;
-            }
-        }
+        $tool = Toolzoo_Constants::get_tool_by_id($tool_id);
 
         if (!$tool) {
             return '<p>' . esc_html__('Tool not found.', 'toolzoo') . '</p>';
         }
 
-        // Render the appropriate tool
-        switch ($tool_id) {
-            case 'password':
-                $generator = new Toolzoo_Password_Generator();
-                return $generator->render();
-
-            case 'nengo':
-                $list = new Toolzoo_Nengo_List();
-                return $list->render();
-
-            case 'worldclock':
-                $worldclock = new Toolzoo_Worldclock();
-                return $worldclock->render();
-
-            default:
-                return '<p>' . esc_html__('Tool not available.', 'toolzoo') . '</p>';
+        // Verify class exists
+        if (!class_exists($tool['class'])) {
+            return '<p>' . sprintf(esc_html__('Tool class not found: %s', 'toolzoo'), esc_html($tool['class'])) . '</p>';
         }
+
+        // Render the tool
+        $instance = new $tool['class']();
+        return $instance->render();
     }
 
     /**

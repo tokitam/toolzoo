@@ -171,32 +171,7 @@ class Toolzoo_Admin {
      * @return array Array of tool information
      */
     private function get_tools_list() {
-        return array(
-            array(
-                'id'          => 'password',
-                'name'        => __('Password Generator', 'toolzoo'),
-                'description' => __('A tool that generates 20 random passwords at once. You can customize the length and character types (numbers, uppercase, lowercase, symbols). Generated passwords can be copied individually or all at once.', 'toolzoo'),
-                'shortcode'   => '[toolzoo_password]',
-                'class'       => 'Toolzoo_Password_Generator',
-                'icon'        => 'dashicons-lock',
-            ),
-            array(
-                'id'          => 'nengo',
-                'name'        => __('Japanese Era List', 'toolzoo'),
-                'description' => __('Displays a correspondence table between Japanese era names (Meiji to Reiwa) and Western calendar years. A convenient tool for converting and checking era years. The search function allows you to quickly find the desired year.', 'toolzoo'),
-                'shortcode'   => '[toolzoo_nengo]',
-                'class'       => 'Toolzoo_Nengo_List',
-                'icon'        => 'dashicons-calendar-alt',
-            ),
-            array(
-                'id'          => 'worldclock',
-                'name'        => __('World Clock', 'toolzoo'),
-                'description' => __('Displays current time in 30 major cities around the world. Automatically sorted from your timezone eastward. Updates every second.', 'toolzoo'),
-                'shortcode'   => '[toolzoo_worldclock]',
-                'class'       => 'Toolzoo_Worldclock',
-                'icon'        => 'dashicons-clock',
-            ),
-        );
+        return Toolzoo_Constants::get_tools_list();
     }
 
     /**
@@ -240,51 +215,27 @@ class Toolzoo_Admin {
      * @param string $tool_id Tool ID
      */
     private function enqueue_tool_assets($tool_id) {
-        // Password generator tool
-        if ($tool_id === 'password') {
+        $assets = Toolzoo_Constants::get_tool_assets($tool_id);
+
+        if (empty($assets)) {
+            return;
+        }
+
+        // Enqueue CSS
+        if (!empty($assets['css'])) {
             wp_enqueue_style(
-                'toolzoo-password',
-                TOOLZOO_PLUGIN_URL . 'assets/css/password.css',
+                'toolzoo-' . $tool_id,
+                TOOLZOO_PLUGIN_URL . $assets['css'],
                 array(),
                 TOOLZOO_VERSION
-            );
-            wp_enqueue_script(
-                'toolzoo-password',
-                TOOLZOO_PLUGIN_URL . 'assets/js/password.js',
-                array(),
-                TOOLZOO_VERSION,
-                true
             );
         }
 
-        // Japanese era list tool
-        if ($tool_id === 'nengo') {
-            wp_enqueue_style(
-                'toolzoo-nengo',
-                TOOLZOO_PLUGIN_URL . 'assets/css/nengo.css',
-                array(),
-                TOOLZOO_VERSION
-            );
+        // Enqueue JavaScript
+        if (!empty($assets['js'])) {
             wp_enqueue_script(
-                'toolzoo-nengo',
-                TOOLZOO_PLUGIN_URL . 'assets/js/nengo.js',
-                array(),
-                TOOLZOO_VERSION,
-                true
-            );
-        }
-
-        // World clock tool
-        if ($tool_id === 'worldclock') {
-            wp_enqueue_style(
-                'toolzoo-worldclock',
-                TOOLZOO_PLUGIN_URL . 'assets/css/worldclock.css',
-                array(),
-                TOOLZOO_VERSION
-            );
-            wp_enqueue_script(
-                'toolzoo-worldclock',
-                TOOLZOO_PLUGIN_URL . 'assets/js/worldclock.js',
+                'toolzoo-' . $tool_id,
+                TOOLZOO_PLUGIN_URL . $assets['js'],
                 array(),
                 TOOLZOO_VERSION,
                 true
