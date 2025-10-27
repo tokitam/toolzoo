@@ -42,6 +42,7 @@ class Toolzoo {
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-worldclock.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-json-processor.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-toolzoo-links.php';
+        require_once TOOLZOO_PLUGIN_DIR . 'includes/class-bmi-calculator.php';
     }
 
     /**
@@ -64,6 +65,7 @@ class Toolzoo {
         add_shortcode('toolzoo_worldclock', array($this, 'worldclock_shortcode'));
         add_shortcode('toolzoo_json', array($this, 'json_shortcode'));
         add_shortcode('toolzoo_links', array($this, 'links_shortcode'));
+        add_shortcode('toolzoo_bmi', array($this, 'bmi_shortcode'));
     }
 
     /**
@@ -130,6 +132,17 @@ class Toolzoo {
     public function links_shortcode($atts) {
         $links = new Toolzoo_Links();
         return $links->render($atts);
+    }
+
+    /**
+     * BMI calculator shortcode
+     *
+     * @param array $atts Shortcode attributes
+     * @return string HTML output
+     */
+    public function bmi_shortcode($atts) {
+        $calculator = new Toolzoo_BMI_Calculator();
+        return $calculator->render();
     }
 
     /**

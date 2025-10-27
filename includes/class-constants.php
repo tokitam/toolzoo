@@ -91,6 +91,17 @@ class Toolzoo_Constants {
                 'slug'        => 'json',
                 'emoji'       => '{}',
             ),
+            // BMI Calculator Tool
+            array(
+                'id'          => 'bmi',
+                'name'        => __('BMI Calculation', 'toolzoo'),
+                'description' => __('Calculate your BMI (Body Mass Index) by entering your height and weight. Displays your BMI value, health category (underweight, normal, overweight, obese), and ideal weight range based on standard BMI criteria.', 'toolzoo'),
+                'shortcode'   => '[toolzoo_bmi]',
+                'class'       => 'Toolzoo_BMI_Calculator',
+                'icon'        => 'dashicons-chart-bar',
+                'slug'        => 'bmi',
+                'emoji'       => '⚖️',
+            ),
         );
     }
 
@@ -133,6 +144,10 @@ class Toolzoo_Constants {
             'json' => array(
                 'css' => 'assets/css/json.css',
                 'js'  => 'assets/js/json.js',
+            ),
+            'bmi' => array(
+                'css' => 'assets/css/bmi.css',
+                'js'  => 'assets/js/bmi.js',
             ),
         );
 

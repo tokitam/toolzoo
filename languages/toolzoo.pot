@@ -183,3 +183,111 @@ msgstr ""
 #: includes/class-json-processor.php:33
 msgid "Paste or enter JSON data to validate, format, minify, and view its structure. Use the tabs to switch between Pretty Print (formatted), Minify (compressed), and Tree View (hierarchical structure)."
 msgstr ""
+
+#: includes/class-constants.php:97
+msgid "BMI Calculation"
+msgstr ""
+
+#: includes/class-constants.php:98
+msgid "Calculate your BMI (Body Mass Index) by entering your height and weight. Displays your BMI value, health category (underweight, normal, overweight, obese), and ideal weight range based on standard BMI criteria."
+msgstr ""
+
+#: includes/class-bmi-calculator.php:31
+msgid "BMI Calculator"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:39
+msgid "Height"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:50
+msgid "cm"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:55
+msgid "Weight"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:66
+msgid "kg"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:70
+msgid "Calculate"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:76
+msgid "BMI"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:81
+msgid "Category"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:85
+msgid "Ideal Weight"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:90
+msgid "About BMI"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:92
+msgid "BMI Formula"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:93
+msgid "BMI = Weight (kg) ÷ Height (m)²"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:95
+msgid "BMI Categories"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:99
+msgid "BMI Range"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:105
+msgid "BMI &lt; 18.5"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:106
+msgid "Underweight"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:109
+msgid "18.5 ≤ BMI &lt; 25"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:110
+msgid "Normal Weight"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:113
+msgid "25 ≤ BMI &lt; 30"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:114
+msgid "Overweight"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:117
+msgid "30 ≤ BMI"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:118
+msgid "Obese"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:123
+msgid "About Ideal Weight"
+msgstr ""
+
+#: includes/class-bmi-calculator.php:125
+msgid "Ideal weight is calculated as the weight range corresponding to a BMI of 18.5 to 25. The most commonly cited ideal BMI is 22. The ideal weight range displayed is based on these BMI standards."
+msgstr ""
+
+#: includes/class-bmi-calculator.php:159
+msgid "Height must be between 100-250 cm and weight between 20-200 kg."
+msgstr ""
