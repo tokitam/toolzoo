@@ -364,3 +364,111 @@ msgstr "トルコ"
 #: includes/class-all-shortcode.php:67
 msgid "Displays current time in 30 major cities around the world. Automatically sorted from your timezone eastward. Updates every second."
 msgstr "世界の主要30都市の現在時刻を表示します。あなたのタイムゾーンから東回りに自動で並べ替えられます。毎秒更新されます。"
+
+#: includes/class-constants.php:97
+msgid "BMI Calculation"
+msgstr "BMIの計算"
+
+#: includes/class-constants.php:98
+msgid "Calculate your BMI (Body Mass Index) by entering your height and weight. Displays your BMI value, health category (underweight, normal, overweight, obese), and ideal weight range based on standard BMI criteria."
+msgstr "身長と体重を入力してBMI（体格指数）を計算できます。BMI値、健康カテゴリー（痩せ型、普通体重、過体重、肥満）、および標準BMI基準に基づいた適正体重範囲を表示します。"
+
+#: includes/class-bmi-calculator.php:31
+msgid "BMI Calculator"
+msgstr "BMI計算ツール"
+
+#: includes/class-bmi-calculator.php:39
+msgid "Height"
+msgstr "身長"
+
+#: includes/class-bmi-calculator.php:50
+msgid "cm"
+msgstr "cm"
+
+#: includes/class-bmi-calculator.php:55
+msgid "Weight"
+msgstr "体重"
+
+#: includes/class-bmi-calculator.php:66
+msgid "kg"
+msgstr "kg"
+
+#: includes/class-bmi-calculator.php:70
+msgid "Calculate"
+msgstr "計算する"
+
+#: includes/class-bmi-calculator.php:76
+msgid "BMI"
+msgstr "BMI"
+
+#: includes/class-bmi-calculator.php:81
+msgid "Category"
+msgstr "評価"
+
+#: includes/class-bmi-calculator.php:85
+msgid "Ideal Weight"
+msgstr "適正体重"
+
+#: includes/class-bmi-calculator.php:90
+msgid "About BMI"
+msgstr "BMIについて"
+
+#: includes/class-bmi-calculator.php:92
+msgid "BMI Formula"
+msgstr "BMI計算式"
+
+#: includes/class-bmi-calculator.php:93
+msgid "BMI = Weight (kg) ÷ Height (m)²"
+msgstr "BMI = 体重(kg) ÷ 身長(m)²"
+
+#: includes/class-bmi-calculator.php:95
+msgid "BMI Categories"
+msgstr "BMI評価"
+
+#: includes/class-bmi-calculator.php:99
+msgid "BMI Range"
+msgstr "BMI値"
+
+#: includes/class-bmi-calculator.php:105
+msgid "BMI &lt; 18.5"
+msgstr "BMI &lt; 18.5"
+
+#: includes/class-bmi-calculator.php:106
+msgid "Underweight"
+msgstr "痩せ型"
+
+#: includes/class-bmi-calculator.php:109
+msgid "18.5 ≤ BMI &lt; 25"
+msgstr "18.5 ≤ BMI &lt; 25"
+
+#: includes/class-bmi-calculator.php:110
+msgid "Normal Weight"
+msgstr "普通体重"
+
+#: includes/class-bmi-calculator.php:113
+msgid "25 ≤ BMI &lt; 30"
+msgstr "25 ≤ BMI &lt; 30"
+
+#: includes/class-bmi-calculator.php:114
+msgid "Overweight"
+msgstr "過体重"
+
+#: includes/class-bmi-calculator.php:117
+msgid "30 ≤ BMI"
+msgstr "30 ≤ BMI"
+
+#: includes/class-bmi-calculator.php:118
+msgid "Obese"
+msgstr "肥満"
+
+#: includes/class-bmi-calculator.php:123
+msgid "About Ideal Weight"
+msgstr "適正体重について"
+
+#: includes/class-bmi-calculator.php:125
+msgid "Ideal weight is calculated as the weight range corresponding to a BMI of 18.5 to 25. The most commonly cited ideal BMI is 22. The ideal weight range displayed is based on these BMI standards."
+msgstr "適正体重はBMI 18.5～25に対応する体重範囲として計算されます。最も一般的に引用される理想的なBMIは22です。表示される適正体重範囲はこれらのBMI基準に基づいています。"
+
+#: includes/class-bmi-calculator.php:159
+msgid "Height must be between 100-250 cm and weight between 20-200 kg."
+msgstr "身長は100～250cm、体重は20～200kgで入力してください。"
