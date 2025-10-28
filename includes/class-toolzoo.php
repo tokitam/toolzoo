@@ -43,6 +43,7 @@ class Toolzoo {
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-json-processor.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-toolzoo-links.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-bmi-calculator.php';
+        require_once TOOLZOO_PLUGIN_DIR . 'includes/class-ip-checker.php';
     }
 
     /**
@@ -66,6 +67,7 @@ class Toolzoo {
         add_shortcode('toolzoo_json', array($this, 'json_shortcode'));
         add_shortcode('toolzoo_links', array($this, 'links_shortcode'));
         add_shortcode('toolzoo_bmi', array($this, 'bmi_shortcode'));
+        add_shortcode('toolzoo_ip', array($this, 'ip_shortcode'));
     }
 
     /**
@@ -143,6 +145,17 @@ class Toolzoo {
     public function bmi_shortcode($atts) {
         $calculator = new Toolzoo_BMI_Calculator();
         return $calculator->render();
+    }
+
+    /**
+     * IP Checker shortcode
+     *
+     * @param array $atts Shortcode attributes
+     * @return string HTML output
+     */
+    public function ip_shortcode($atts) {
+        $checker = new Toolzoo_IP_Checker();
+        return $checker->render();
     }
 
     /**

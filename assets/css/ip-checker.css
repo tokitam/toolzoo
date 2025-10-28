@@ -1,0 +1,211 @@
+/* IP-CHECKER Container */
+.toolzoo-ip-checker-container {
+    max-width: 700px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.toolzoo-ip-checker-header h3 {
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Content Area */
+.toolzoo-ip-checker-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* IP Checker Item */
+.toolzoo-ip-checker-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    transition: box-shadow 0.2s ease;
+}
+
+.toolzoo-ip-checker-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Label */
+.toolzoo-ip-checker-label {
+    min-width: 140px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* Value */
+.toolzoo-ip-checker-value {
+    flex: 1;
+    font-family: 'Courier New', 'Courier', monospace;
+    font-size: 14px;
+    color: #0066cc;
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    word-break: break-all;
+    user-select: all;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.toolzoo-ip-checker-value:hover {
+    background: #f0f0f0;
+}
+
+/* Private IP */
+.toolzoo-ip-checker-value.private {
+    color: #ff8800;
+    border-color: #ffcc99;
+    background: #fffbf5;
+}
+
+.toolzoo-ip-checker-value.private:hover {
+    background: #ffefe5;
+}
+
+/* Public IP */
+.toolzoo-ip-checker-value.public {
+    color: #00aa00;
+    border-color: #99dd99;
+    background: #f5fff5;
+}
+
+.toolzoo-ip-checker-value.public:hover {
+    background: #e5ffe5;
+}
+
+/* Copy Button */
+.toolzoo-ip-checker-copy-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    background: #0066cc;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.toolzoo-ip-checker-copy-btn:hover {
+    background: #0052a3;
+}
+
+.toolzoo-ip-checker-copy-btn:active {
+    background: #003d7a;
+    transform: scale(0.98);
+}
+
+.toolzoo-ip-checker-copy-btn.copied {
+    background: #28a745;
+}
+
+.toolzoo-ip-checker-copy-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Info Section */
+.toolzoo-ip-checker-info {
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.toolzoo-ip-checker-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .toolzoo-ip-checker-container {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .toolzoo-ip-checker-header h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .toolzoo-ip-checker-item {
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .toolzoo-ip-checker-label {
+        min-width: 120px;
+        flex-basis: 100%;
+        order: 1;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .toolzoo-ip-checker-value {
+        flex-basis: calc(100% - 75px);
+        order: 2;
+        min-width: 0;
+    }
+
+    .toolzoo-ip-checker-copy-btn {
+        flex-basis: 70px;
+        order: 3;
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .toolzoo-ip-checker-container {
+        padding: 12px;
+    }
+
+    .toolzoo-ip-checker-header h3 {
+        font-size: 16px;
+    }
+
+    .toolzoo-ip-checker-item {
+        padding: 8px;
+    }
+
+    .toolzoo-ip-checker-label {
+        font-size: 13px;
+        min-width: 100px;
+    }
+
+    .toolzoo-ip-checker-value {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .toolzoo-ip-checker-copy-btn {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+
+    .toolzoo-ip-checker-info p {
+        font-size: 12px;
+    }
+}
