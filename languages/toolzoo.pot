@@ -291,3 +291,44 @@ msgstr ""
 #: includes/class-bmi-calculator.php:159
 msgid "Height must be between 100-250 cm and weight between 20-200 kg."
 msgstr ""
+
+#: includes/class-constants.php:108
+#: includes/class-ip-checker.php:38
+msgid "IP-CHECKER"
+msgstr ""
+
+#: includes/class-constants.php:109
+msgid "Displays your current IP address, domain (reverse DNS lookup), gateway information, and other server connection details. Useful for network diagnostics and checking your connection information."
+msgstr ""
+
+#: includes/class-ip-checker.php:46
+msgid "Your IP Address"
+msgstr ""
+
+#: includes/class-ip-checker.php:58
+msgid "Your Domain"
+msgstr ""
+
+#: includes/class-ip-checker.php:70
+msgid "Gateway"
+msgstr ""
+
+#: includes/class-ip-checker.php:82
+msgid "User Agent"
+msgstr ""
+
+#: includes/class-ip-checker.php:94
+msgid "Server Port"
+msgstr ""
+
+#: includes/class-ip-checker.php:102
+msgid "Request Method"
+msgstr ""
+
+#: includes/class-ip-checker.php:110
+msgid "Protocol"
+msgstr ""
+
+#: includes/class-ip-checker.php:117
+msgid "This tool displays your network connection information for diagnostic purposes."
+msgstr ""

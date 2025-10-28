@@ -102,6 +102,17 @@ class Toolzoo_Constants {
                 'slug'        => 'bmi',
                 'emoji'       => '⚖️',
             ),
+            // IP Checker Tool
+            array(
+                'id'          => 'ip',
+                'name'        => __('IP-CHECKER', 'toolzoo'),
+                'description' => __('Displays your current IP address, domain (reverse DNS lookup), gateway information, and other server connection details. Useful for network diagnostics and checking your connection information.', 'toolzoo'),
+                'shortcode'   => '[toolzoo_ip]',
+                'class'       => 'Toolzoo_IP_Checker',
+                'icon'        => 'dashicons-cloud',
+                'slug'        => 'ip',
+                'emoji'       => '🌐',
+            ),
         );
     }
 
@@ -148,6 +159,10 @@ class Toolzoo_Constants {
             'bmi' => array(
                 'css' => 'assets/css/bmi.css',
                 'js'  => 'assets/js/bmi.js',
+            ),
+            'ip' => array(
+                'css' => 'assets/css/ip-checker.css',
+                'js'  => 'assets/js/ip-checker.js',
             ),
         );
 
