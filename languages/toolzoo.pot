@@ -580,3 +580,171 @@ msgstr ""
 #: includes/class-length-unit.php
 msgid "* 1 shaku = 10/33 m (as defined by the Japanese Measurement Act)"
 msgstr ""
+
+#: includes/class-constants.php
+msgid "Weight Unit Converter"
+msgstr ""
+
+#: includes/class-constants.php
+msgid "Converts between kilograms, pounds, and kan (Japanese traditional weight unit). Displays a reference table and converts in real time as you type."
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "Pounds (lb)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "Kan"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Kilogram"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Pound"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Kan"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "kan"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "* 1 kan = 3.75 kg (Japanese Measurement Act) / 1 pound = 0.45359237 kg (International definition)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "Kilogram"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "Pound"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "Japanese Traditional Weight Units (Shakkan-ho)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "In Kilograms"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Mo (毛)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 1/10 rin"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 1/10 monme"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Monme (匁)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 1/1000 kan"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Ryo (両)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 10 monme"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Kin (斤)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 160 monme"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Kan (貫)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 1000 monme"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "* 1 monme = 3.75 g (as defined by the Japanese Measurement Act)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "Imperial Weight Units"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Grain (gr)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Dram (dr)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 27.34 gr"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Ounce (oz)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 16 dr"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Pound (lb)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 16 oz"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Stone (st)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 14 lb"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Hundredweight (cwt)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 100 lb"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Short Ton (US ton)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 2000 lb"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "1 Long Ton (UK ton)"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "= 2240 lb"
+msgstr ""
+
+#: includes/class-weight-unit.php
+msgid "* 1 pound = 0.45359237 kg (exact, by the International Yard and Pound Agreement of 1959)"
+msgstr ""

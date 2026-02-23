@@ -54,6 +54,7 @@ class Toolzoo {
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-bmi-calculator.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-ip-checker.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-length-unit.php';
+        require_once TOOLZOO_PLUGIN_DIR . 'includes/class-weight-unit.php';
     }
 
     /**
@@ -79,6 +80,7 @@ class Toolzoo {
         add_shortcode('toolzoo_bmi', array($this, 'bmi_shortcode'));
         add_shortcode('toolzoo_ip', array($this, 'ip_shortcode'));
         add_shortcode('toolzoo_length_unit', array($this, 'length_unit_shortcode'));
+        add_shortcode('toolzoo_weight_unit', array($this, 'weight_unit_shortcode'));
     }
 
     /**
@@ -181,6 +183,17 @@ class Toolzoo {
     }
 
     /**
+     * Weight Unit Converter shortcode
+     *
+     * @param array $atts Shortcode attributes
+     * @return string HTML output
+     */
+    public function weight_unit_shortcode($atts) {
+        $converter = new Toolzoo_Weight_Unit();
+        return $converter->render();
+    }
+
+    /**
      * Register rewrite rules for path-based access
      *
      * @public This method is called during plugin activation
@@ -194,7 +207,8 @@ class Toolzoo {
             'json',
             'bmi',
             'ip',
-            'length'
+            'length',
+            'weight'
         );
 
         // Register query variable (must be called on init)
@@ -237,7 +251,8 @@ class Toolzoo {
                 'json',
                 'bmi',
                 'ip',
-                'length'
+                'length',
+                'weight'
             );
 
             if (in_array($tool, $allowed_tools, true)) {
@@ -274,7 +289,8 @@ class Toolzoo {
             'json',
             'bmi',
             'ip',
-            'length'
+            'length',
+            'weight'
         );
 
         if (!in_array($tool, $allowed_tools, true)) {
