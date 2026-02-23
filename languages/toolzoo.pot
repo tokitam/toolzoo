@@ -748,3 +748,143 @@ msgstr ""
 #: includes/class-weight-unit.php
 msgid "* 1 pound = 0.45359237 kg (exact, by the International Yard and Pound Agreement of 1959)"
 msgstr ""
+
+#: includes/class-constants.php
+msgid "Volume Unit Converter"
+msgstr ""
+
+#: includes/class-constants.php
+msgid "Converts between liters, gallons, and sho (Japanese traditional volume unit). Displays a reference table and converts in real time as you type."
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "Gallons (gal)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "Sho"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Liter"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Gallon"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Sho"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "sho"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "* 1 sho = 1.8039 L (Japanese Measurement Act) / 1 US gallon = 3.785411784 L (International definition)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "Liter"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "Gallon"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "Japanese Traditional Volume Units (Shakkan-ho)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "In Liters"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Shaku (勺)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "= 1/10 go"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Go (合)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "= 10 shaku (勺)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Sho (升)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "= 10 go"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 To (斗)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "= 10 sho"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Koku (石)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "= 10 to"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "* 1 sho = 1.8039 L (as defined by the Japanese Measurement Act)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "US Volume Units"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Fluid Ounce (fl oz)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Cup"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "= 8 fl oz"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Pint (pt)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "= 2 cups"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Quart (qt)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "= 2 pints"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "1 Gallon (gal)"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "= 4 quarts"
+msgstr ""
+
+#: includes/class-volume-unit.php
+msgid "* 1 US gallon = 3.785411784 L / 1 UK gallon = 4.54609 L (British definition)"
+msgstr ""

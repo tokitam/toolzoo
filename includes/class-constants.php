@@ -135,6 +135,17 @@ class Toolzoo_Constants {
                 'slug'        => 'weight',
                 'emoji'       => '🏋️',
             ),
+            // Volume Unit Converter Tool
+            array(
+                'id'          => 'volume',
+                'name'        => __('Volume Unit Converter', 'toolzoo'),
+                'description' => __('Converts between liters, gallons, and sho (Japanese traditional volume unit). Displays a reference table and converts in real time as you type.', 'toolzoo'),
+                'shortcode'   => '[toolzoo_volume_unit]',
+                'class'       => 'Toolzoo_Volume_Unit',
+                'icon'        => 'dashicons-admin-generic',
+                'slug'        => 'volume',
+                'emoji'       => '🧴',
+            ),
         );
     }
 
@@ -193,6 +204,10 @@ class Toolzoo_Constants {
             'weight' => array(
                 'css' => 'assets/css/weight-unit.css',
                 'js'  => 'assets/js/weight-unit.js',
+            ),
+            'volume' => array(
+                'css' => 'assets/css/volume-unit.css',
+                'js'  => 'assets/js/volume-unit.js',
             ),
         );
 

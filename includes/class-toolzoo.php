@@ -55,6 +55,7 @@ class Toolzoo {
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-ip-checker.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-length-unit.php';
         require_once TOOLZOO_PLUGIN_DIR . 'includes/class-weight-unit.php';
+        require_once TOOLZOO_PLUGIN_DIR . 'includes/class-volume-unit.php';
     }
 
     /**
@@ -81,6 +82,7 @@ class Toolzoo {
         add_shortcode('toolzoo_ip', array($this, 'ip_shortcode'));
         add_shortcode('toolzoo_length_unit', array($this, 'length_unit_shortcode'));
         add_shortcode('toolzoo_weight_unit', array($this, 'weight_unit_shortcode'));
+        add_shortcode('toolzoo_volume_unit', array($this, 'volume_unit_shortcode'));
     }
 
     /**
@@ -194,6 +196,17 @@ class Toolzoo {
     }
 
     /**
+     * Volume Unit Converter shortcode
+     *
+     * @param array $atts Shortcode attributes
+     * @return string HTML output
+     */
+    public function volume_unit_shortcode($atts) {
+        $converter = new Toolzoo_Volume_Unit();
+        return $converter->render();
+    }
+
+    /**
      * Register rewrite rules for path-based access
      *
      * @public This method is called during plugin activation
@@ -208,7 +221,8 @@ class Toolzoo {
             'bmi',
             'ip',
             'length',
-            'weight'
+            'weight',
+            'volume'
         );
 
         // Register query variable (must be called on init)
@@ -252,7 +266,8 @@ class Toolzoo {
                 'bmi',
                 'ip',
                 'length',
-                'weight'
+                'weight',
+                'volume'
             );
 
             if (in_array($tool, $allowed_tools, true)) {
@@ -290,7 +305,8 @@ class Toolzoo {
             'bmi',
             'ip',
             'length',
-            'weight'
+            'weight',
+            'volume'
         );
 
         if (!in_array($tool, $allowed_tools, true)) {
