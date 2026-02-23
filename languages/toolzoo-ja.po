@@ -513,3 +513,251 @@ msgstr "プロトコル"
 #: includes/class-ip-checker.php:117
 msgid "This tool displays your network connection information for diagnostic purposes."
 msgstr "このツールは診断目的のためにあなたのネットワーク接続情報を表示します。"
+
+#: includes/class-constants.php
+msgid "Length Unit Converter"
+msgstr "長さ単位コンバーター"
+
+#: includes/class-constants.php
+msgid "Converts between metric (km, m, cm), imperial (mile, ft, inch), and Japanese traditional Shakkan-ho (ri, sun, bu, rin) length units. Displays a reference table and converts in real time as you type."
+msgstr "メートル法（km・m・cm）・ヤード・ポンド法（mile・ft・in）・尺貫法（里・寸・分・厘）の長さ単位を相互変換します。基準値早見表を表示し、入力するとリアルタイムで他の単位に自動変換します。"
+
+#: includes/class-length-unit.php
+msgid "Reference Table"
+msgstr "基準値早見表"
+
+#: includes/class-length-unit.php
+msgid "Reference Value"
+msgstr "基準値"
+
+#: includes/class-length-unit.php
+msgid "Feet (ft)"
+msgstr "フィート (ft)"
+
+#: includes/class-length-unit.php
+msgid "Sun"
+msgstr "寸"
+
+#: includes/class-length-unit.php
+msgid "sun"
+msgstr "寸"
+
+#: includes/class-length-unit.php
+msgid "1 Meter"
+msgstr "1 メートル"
+
+#: includes/class-length-unit.php
+msgid "1 Foot"
+msgstr "1 フィート"
+
+#: includes/class-length-unit.php
+msgid "1 Sun"
+msgstr "1 寸"
+
+#: includes/class-length-unit.php
+msgid "* 1 sun = 1/33 m (Japanese Measurement Act) / 1 foot = 0.3048 m (International definition)"
+msgstr "※ 1寸 = 1/33 m（日本計量法） / 1フィート = 0.3048 m（国際定義）"
+
+#: includes/class-length-unit.php
+msgid "Unit Converter"
+msgstr "自由変換"
+
+#: includes/class-length-unit.php
+msgid "Enter a value in any field to automatically convert to all other units."
+msgstr "いずれかに入力すると他の単位へ自動変換します"
+
+#: includes/class-length-unit.php
+msgid "Metric System"
+msgstr "メートル法"
+
+#: includes/class-length-unit.php
+msgid "Kilometer"
+msgstr "キロメートル"
+
+#: includes/class-length-unit.php
+msgid "Meter"
+msgstr "メートル"
+
+#: includes/class-length-unit.php
+msgid "Centimeter"
+msgstr "センチメートル"
+
+#: includes/class-length-unit.php
+msgid "Imperial"
+msgstr "ヤード・ポンド法"
+
+#: includes/class-length-unit.php
+msgid "Mile"
+msgstr "マイル"
+
+#: includes/class-length-unit.php
+msgid "Foot"
+msgstr "フィート"
+
+#: includes/class-length-unit.php
+msgid "Inch"
+msgstr "インチ"
+
+#: includes/class-length-unit.php
+msgid "Shakkan-ho"
+msgstr "尺貫法"
+
+#: includes/class-length-unit.php
+msgid "Ri"
+msgstr "里"
+
+#: includes/class-length-unit.php
+msgid "ri"
+msgstr "里"
+
+#: includes/class-length-unit.php
+msgid "Bu"
+msgstr "分"
+
+#: includes/class-length-unit.php
+msgid "bu"
+msgstr "分"
+
+#: includes/class-length-unit.php
+msgid "Rin"
+msgstr "厘"
+
+#: includes/class-length-unit.php
+msgid "rin"
+msgstr "厘"
+
+#: includes/class-length-unit.php
+msgid "Clear"
+msgstr "クリア"
+
+#: includes/class-length-unit.php
+msgid "Imperial Units"
+msgstr "ヤード・ポンド法 単位体系"
+
+#: includes/class-length-unit.php
+msgid "Unit"
+msgstr "単位"
+
+#: includes/class-length-unit.php
+msgid "Relation"
+msgstr "関係"
+
+#: includes/class-length-unit.php
+msgid "In Meters"
+msgstr "メートル換算"
+
+#: includes/class-length-unit.php
+msgid "1 Inch (inch)"
+msgstr "1 インチ (inch)"
+
+#: includes/class-length-unit.php
+msgid "= 1/12 foot"
+msgstr "= 1/12 フィート"
+
+#: includes/class-length-unit.php
+msgid "1 Foot (foot)"
+msgstr "1 フィート (foot)"
+
+#: includes/class-length-unit.php
+msgid "= 12 inches"
+msgstr "= 12 インチ"
+
+#: includes/class-length-unit.php
+msgid "1 Yard (yard)"
+msgstr "1 ヤード (yard)"
+
+#: includes/class-length-unit.php
+msgid "= 3 feet"
+msgstr "= 3 フィート"
+
+#: includes/class-length-unit.php
+msgid "1 Chain (chain)"
+msgstr "1 チェーン (chain)"
+
+#: includes/class-length-unit.php
+msgid "= 22 yards"
+msgstr "= 22 ヤード"
+
+#: includes/class-length-unit.php
+msgid "1 Mile (mile)"
+msgstr "1 マイル (mile)"
+
+#: includes/class-length-unit.php
+msgid "= 80 chains = 1760 yards"
+msgstr "= 80 チェーン = 1760 ヤード"
+
+#: includes/class-length-unit.php
+msgid "* 1 inch = 25.4 mm (exact, by the International Yard and Pound Agreement of 1959)"
+msgstr "※ 1インチ = 25.4 mm（1959年 国際ヤード・ポンド協定による厳密な定義）"
+
+#: includes/class-length-unit.php
+msgid "Japanese Traditional Units (Shakkan-ho)"
+msgstr "尺貫法 単位体系"
+
+#: includes/class-length-unit.php
+msgid "1 Rin (厘)"
+msgstr "1 厘（りん）"
+
+#: includes/class-length-unit.php
+msgid "= 1/10 bu"
+msgstr "= 1/10 分"
+
+#: includes/class-length-unit.php
+msgid "1 Bu (分)"
+msgstr "1 分（ぶ）"
+
+#: includes/class-length-unit.php
+msgid "= 1/10 sun"
+msgstr "= 1/10 寸"
+
+#: includes/class-length-unit.php
+msgid "1 Sun (寸)"
+msgstr "1 寸（すん）"
+
+#: includes/class-length-unit.php
+msgid "= 1/10 shaku"
+msgstr "= 1/10 尺"
+
+#: includes/class-length-unit.php
+msgid "1 Shaku (尺)"
+msgstr "1 尺（しゃく）"
+
+#: includes/class-length-unit.php
+msgid "= 10 sun"
+msgstr "= 10 寸"
+
+#: includes/class-length-unit.php
+msgid "1 Ken (間)"
+msgstr "1 間（けん）"
+
+#: includes/class-length-unit.php
+msgid "= 6 shaku"
+msgstr "= 6 尺"
+
+#: includes/class-length-unit.php
+msgid "1 Jo (丈)"
+msgstr "1 丈（じょう）"
+
+#: includes/class-length-unit.php
+msgid "= 10 shaku"
+msgstr "= 10 尺"
+
+#: includes/class-length-unit.php
+msgid "1 Cho (町)"
+msgstr "1 町（ちょう）"
+
+#: includes/class-length-unit.php
+msgid "= 60 ken"
+msgstr "= 60 間"
+
+#: includes/class-length-unit.php
+msgid "1 Ri (里)"
+msgstr "1 里（り）"
+
+#: includes/class-length-unit.php
+msgid "= 36 cho"
+msgstr "= 36 町"
+
+#: includes/class-length-unit.php
+msgid "* 1 shaku = 10/33 m (as defined by the Japanese Measurement Act)"
+msgstr "※ 1尺 = 10/33 m（日本計量法による定義）"

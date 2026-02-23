@@ -113,6 +113,17 @@ class Toolzoo_Constants {
                 'slug'        => 'ip',
                 'emoji'       => '🌐',
             ),
+            // Length Unit Converter Tool
+            array(
+                'id'          => 'length',
+                'name'        => __('Length Unit Converter', 'toolzoo'),
+                'description' => __('Converts between metric (km, m, cm), imperial (mile, ft, inch), and Japanese traditional Shakkan-ho (ri, sun, bu, rin) length units. Displays a reference table and converts in real time as you type.', 'toolzoo'),
+                'shortcode'   => '[toolzoo_length_unit]',
+                'class'       => 'Toolzoo_Length_Unit',
+                'icon'        => 'dashicons-admin-generic',
+                'slug'        => 'length',
+                'emoji'       => '📏',
+            ),
         );
     }
 
@@ -163,6 +174,10 @@ class Toolzoo_Constants {
             'ip' => array(
                 'css' => 'assets/css/ip-checker.css',
                 'js'  => 'assets/js/ip-checker.js',
+            ),
+            'length' => array(
+                'css' => 'assets/css/length-unit.css',
+                'js'  => 'assets/js/length-unit.js',
             ),
         );
 
