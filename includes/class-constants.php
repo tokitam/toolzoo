@@ -124,6 +124,17 @@ class Toolzoo_Constants {
                 'slug'        => 'length',
                 'emoji'       => '📏',
             ),
+            // Weight Unit Converter Tool
+            array(
+                'id'          => 'weight',
+                'name'        => __('Weight Unit Converter', 'toolzoo'),
+                'description' => __('Converts between kilograms, pounds, and kan (Japanese traditional weight unit). Displays a reference table and converts in real time as you type.', 'toolzoo'),
+                'shortcode'   => '[toolzoo_weight_unit]',
+                'class'       => 'Toolzoo_Weight_Unit',
+                'icon'        => 'dashicons-admin-generic',
+                'slug'        => 'weight',
+                'emoji'       => '🏋️',
+            ),
         );
     }
 
@@ -178,6 +189,10 @@ class Toolzoo_Constants {
             'length' => array(
                 'css' => 'assets/css/length-unit.css',
                 'js'  => 'assets/js/length-unit.js',
+            ),
+            'weight' => array(
+                'css' => 'assets/css/weight-unit.css',
+                'js'  => 'assets/js/weight-unit.js',
             ),
         );
 

@@ -761,3 +761,171 @@ msgstr "= 36 町"
 #: includes/class-length-unit.php
 msgid "* 1 shaku = 10/33 m (as defined by the Japanese Measurement Act)"
 msgstr "※ 1尺 = 10/33 m（日本計量法による定義）"
+
+#: includes/class-constants.php
+msgid "Weight Unit Converter"
+msgstr "重量単位コンバーター"
+
+#: includes/class-constants.php
+msgid "Converts between kilograms, pounds, and kan (Japanese traditional weight unit). Displays a reference table and converts in real time as you type."
+msgstr "キログラム・ポンド・貫（尺貫法の重量単位）を相互変換します。基準値早見表を表示し、入力するとリアルタイムで他の単位に自動変換します。"
+
+#: includes/class-weight-unit.php
+msgid "Pounds (lb)"
+msgstr "ポンド (lb)"
+
+#: includes/class-weight-unit.php
+msgid "Kan"
+msgstr "貫"
+
+#: includes/class-weight-unit.php
+msgid "1 Kilogram"
+msgstr "1 キログラム"
+
+#: includes/class-weight-unit.php
+msgid "1 Pound"
+msgstr "1 ポンド"
+
+#: includes/class-weight-unit.php
+msgid "1 Kan"
+msgstr "1 貫"
+
+#: includes/class-weight-unit.php
+msgid "kan"
+msgstr "貫"
+
+#: includes/class-weight-unit.php
+msgid "* 1 kan = 3.75 kg (Japanese Measurement Act) / 1 pound = 0.45359237 kg (International definition)"
+msgstr "※ 1貫 = 3.75 kg（日本計量法） / 1ポンド = 0.45359237 kg（国際定義）"
+
+#: includes/class-weight-unit.php
+msgid "Kilogram"
+msgstr "キログラム"
+
+#: includes/class-weight-unit.php
+msgid "Pound"
+msgstr "ポンド"
+
+#: includes/class-weight-unit.php
+msgid "Japanese Traditional Weight Units (Shakkan-ho)"
+msgstr "尺貫法 重量単位体系"
+
+#: includes/class-weight-unit.php
+msgid "In Kilograms"
+msgstr "キログラム換算"
+
+#: includes/class-weight-unit.php
+msgid "1 Mo (毛)"
+msgstr "1 毛（もう）"
+
+#: includes/class-weight-unit.php
+msgid "= 1/10 rin"
+msgstr "= 1/10 厘"
+
+#: includes/class-weight-unit.php
+msgid "= 1/10 monme"
+msgstr "= 1/10 匁"
+
+#: includes/class-weight-unit.php
+msgid "1 Monme (匁)"
+msgstr "1 匁（もんめ）"
+
+#: includes/class-weight-unit.php
+msgid "= 1/1000 kan"
+msgstr "= 1/1000 貫"
+
+#: includes/class-weight-unit.php
+msgid "1 Ryo (両)"
+msgstr "1 両（りょう）"
+
+#: includes/class-weight-unit.php
+msgid "= 10 monme"
+msgstr "= 10 匁"
+
+#: includes/class-weight-unit.php
+msgid "1 Kin (斤)"
+msgstr "1 斤（きん）"
+
+#: includes/class-weight-unit.php
+msgid "= 160 monme"
+msgstr "= 160 匁"
+
+#: includes/class-weight-unit.php
+msgid "1 Kan (貫)"
+msgstr "1 貫（かん）"
+
+#: includes/class-weight-unit.php
+msgid "= 1000 monme"
+msgstr "= 1000 匁"
+
+#: includes/class-weight-unit.php
+msgid "* 1 monme = 3.75 g (as defined by the Japanese Measurement Act)"
+msgstr "※ 1匁 = 3.75 g（日本計量法による定義）"
+
+#: includes/class-weight-unit.php
+msgid "Imperial Weight Units"
+msgstr "ヤード・ポンド法 重量単位体系"
+
+#: includes/class-weight-unit.php
+msgid "1 Grain (gr)"
+msgstr "1 グレーン (gr)"
+
+#: includes/class-weight-unit.php
+msgid "1 Dram (dr)"
+msgstr "1 ドラム (dr)"
+
+#: includes/class-weight-unit.php
+msgid "= 27.34 gr"
+msgstr "= 27.34 グレーン"
+
+#: includes/class-weight-unit.php
+msgid "1 Ounce (oz)"
+msgstr "1 オンス (oz)"
+
+#: includes/class-weight-unit.php
+msgid "= 16 dr"
+msgstr "= 16 ドラム"
+
+#: includes/class-weight-unit.php
+msgid "1 Pound (lb)"
+msgstr "1 ポンド (lb)"
+
+#: includes/class-weight-unit.php
+msgid "= 16 oz"
+msgstr "= 16 オンス"
+
+#: includes/class-weight-unit.php
+msgid "1 Stone (st)"
+msgstr "1 ストーン (st)"
+
+#: includes/class-weight-unit.php
+msgid "= 14 lb"
+msgstr "= 14 ポンド"
+
+#: includes/class-weight-unit.php
+msgid "1 Hundredweight (cwt)"
+msgstr "1 ハンドレッドウェイト (cwt)"
+
+#: includes/class-weight-unit.php
+msgid "= 100 lb"
+msgstr "= 100 ポンド"
+
+#: includes/class-weight-unit.php
+msgid "1 Short Ton (US ton)"
+msgstr "1 ショートトン (US ton)"
+
+#: includes/class-weight-unit.php
+msgid "= 2000 lb"
+msgstr "= 2000 ポンド"
+
+#: includes/class-weight-unit.php
+msgid "1 Long Ton (UK ton)"
+msgstr "1 ロングトン (UK ton)"
+
+#: includes/class-weight-unit.php
+msgid "= 2240 lb"
+msgstr "= 2240 ポンド"
+
+#: includes/class-weight-unit.php
+msgid "* 1 pound = 0.45359237 kg (exact, by the International Yard and Pound Agreement of 1959)"
+msgstr "※ 1ポンド = 0.45359237 kg（1959年 国際ヤード・ポンド協定による厳密な定義）"
