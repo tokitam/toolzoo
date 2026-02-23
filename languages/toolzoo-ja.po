@@ -929,3 +929,143 @@ msgstr "= 2240 ポンド"
 #: includes/class-weight-unit.php
 msgid "* 1 pound = 0.45359237 kg (exact, by the International Yard and Pound Agreement of 1959)"
 msgstr "※ 1ポンド = 0.45359237 kg（1959年 国際ヤード・ポンド協定による厳密な定義）"
+
+#: includes/class-constants.php
+msgid "Volume Unit Converter"
+msgstr "体積単位コンバーター"
+
+#: includes/class-constants.php
+msgid "Converts between liters, gallons, and sho (Japanese traditional volume unit). Displays a reference table and converts in real time as you type."
+msgstr "リットル・ガロン・升（尺貫法の体積単位）を相互変換します。基準値早見表を表示し、入力するとリアルタイムで他の単位に自動変換します。"
+
+#: includes/class-volume-unit.php
+msgid "Gallons (gal)"
+msgstr "ガロン (gal)"
+
+#: includes/class-volume-unit.php
+msgid "Sho"
+msgstr "升"
+
+#: includes/class-volume-unit.php
+msgid "1 Liter"
+msgstr "1 リットル"
+
+#: includes/class-volume-unit.php
+msgid "1 Gallon"
+msgstr "1 ガロン"
+
+#: includes/class-volume-unit.php
+msgid "1 Sho"
+msgstr "1 升"
+
+#: includes/class-volume-unit.php
+msgid "sho"
+msgstr "升"
+
+#: includes/class-volume-unit.php
+msgid "* 1 sho = 1.8039 L (Japanese Measurement Act) / 1 US gallon = 3.785411784 L (International definition)"
+msgstr "※ 1升 = 1.8039 L（日本計量法） / 1米ガロン = 3.785411784 L（国際定義）"
+
+#: includes/class-volume-unit.php
+msgid "Liter"
+msgstr "リットル"
+
+#: includes/class-volume-unit.php
+msgid "Gallon"
+msgstr "ガロン"
+
+#: includes/class-volume-unit.php
+msgid "Japanese Traditional Volume Units (Shakkan-ho)"
+msgstr "尺貫法 体積単位体系"
+
+#: includes/class-volume-unit.php
+msgid "In Liters"
+msgstr "リットル換算"
+
+#: includes/class-volume-unit.php
+msgid "1 Shaku (勺)"
+msgstr "1 勺（しゃく）"
+
+#: includes/class-volume-unit.php
+msgid "= 1/10 go"
+msgstr "= 1/10 合"
+
+#: includes/class-volume-unit.php
+msgid "1 Go (合)"
+msgstr "1 合（ごう）"
+
+#: includes/class-volume-unit.php
+msgid "= 10 shaku (勺)"
+msgstr "= 10 勺"
+
+#: includes/class-volume-unit.php
+msgid "1 Sho (升)"
+msgstr "1 升（しょう）"
+
+#: includes/class-volume-unit.php
+msgid "= 10 go"
+msgstr "= 10 合"
+
+#: includes/class-volume-unit.php
+msgid "1 To (斗)"
+msgstr "1 斗（と）"
+
+#: includes/class-volume-unit.php
+msgid "= 10 sho"
+msgstr "= 10 升"
+
+#: includes/class-volume-unit.php
+msgid "1 Koku (石)"
+msgstr "1 石（こく）"
+
+#: includes/class-volume-unit.php
+msgid "= 10 to"
+msgstr "= 10 斗"
+
+#: includes/class-volume-unit.php
+msgid "* 1 sho = 1.8039 L (as defined by the Japanese Measurement Act)"
+msgstr "※ 1升 = 1.8039 L（日本計量法による定義）"
+
+#: includes/class-volume-unit.php
+msgid "US Volume Units"
+msgstr "米国の体積単位"
+
+#: includes/class-volume-unit.php
+msgid "1 Fluid Ounce (fl oz)"
+msgstr "1 液量オンス (fl oz)"
+
+#: includes/class-volume-unit.php
+msgid "1 Cup"
+msgstr "1 カップ"
+
+#: includes/class-volume-unit.php
+msgid "= 8 fl oz"
+msgstr "= 8 液量オンス"
+
+#: includes/class-volume-unit.php
+msgid "1 Pint (pt)"
+msgstr "1 パイント (pt)"
+
+#: includes/class-volume-unit.php
+msgid "= 2 cups"
+msgstr "= 2 カップ"
+
+#: includes/class-volume-unit.php
+msgid "1 Quart (qt)"
+msgstr "1 クォート (qt)"
+
+#: includes/class-volume-unit.php
+msgid "= 2 pints"
+msgstr "= 2 パイント"
+
+#: includes/class-volume-unit.php
+msgid "1 Gallon (gal)"
+msgstr "1 ガロン (gal)"
+
+#: includes/class-volume-unit.php
+msgid "= 4 quarts"
+msgstr "= 4 クォート"
+
+#: includes/class-volume-unit.php
+msgid "* 1 US gallon = 3.785411784 L / 1 UK gallon = 4.54609 L (British definition)"
+msgstr "※ 1米ガロン = 3.785411784 L / 1英ガロン = 4.54609 L（英国定義）"

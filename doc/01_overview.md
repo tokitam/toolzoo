@@ -19,6 +19,7 @@ WordPress向けの便利ツール集を提供するプラグイン。ショー�
 8. IPアドレスチェッカー (`toolzoo_ip`)
 9. 長さ単位変換（メートル・フィート・寸） (`toolzoo_length_unit`)
 10. 重量単位変換（kg・ポンド・貫） (`toolzoo_weight_unit`)
+11. 体積単位変換（リットル・ガロン・升） (`toolzoo_volume_unit`)
 
 ### 1.4 技術要件
 - WordPress 5.0以上

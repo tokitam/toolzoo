@@ -1,0 +1,244 @@
+/* ToolZoo - Volume Unit Converter Styles */
+
+.toolzoo-volume-container {
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 24px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* ヘッダー */
+.toolzoo-volume-header h3 {
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    color: #333;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 10px;
+}
+
+/* --- 早見表セクション --- */
+.toolzoo-volume-reference {
+    margin-bottom: 24px;
+}
+
+.toolzoo-volume-reference h4 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #555;
+    font-weight: bold;
+}
+
+.toolzoo-volume-reference-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.toolzoo-volume-reference-table th,
+.toolzoo-volume-reference-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.toolzoo-volume-reference-table th {
+    background: #e8f0fb;
+    font-weight: bold;
+    color: #333;
+}
+
+.toolzoo-volume-reference-table tbody tr:nth-child(odd) {
+    background: #fff;
+}
+
+.toolzoo-volume-reference-table tbody tr:nth-child(even) {
+    background: #f5f8ff;
+}
+
+.toolzoo-volume-reference-table td:first-child {
+    font-weight: bold;
+    text-align: left;
+    color: #333;
+}
+
+/* --- 自由変換セクション --- */
+.toolzoo-volume-converter {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.toolzoo-volume-converter h4 {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    color: #555;
+    font-weight: bold;
+}
+
+.toolzoo-volume-converter-hint {
+    margin: 0 0 16px 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.toolzoo-volume-input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.toolzoo-volume-input-label {
+    width: 7.5em;
+    flex-shrink: 0;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.toolzoo-volume-input-field {
+    width: 160px;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    text-align: right;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    box-sizing: border-box;
+}
+
+.toolzoo-volume-input-field:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
+}
+
+/* 編集中フィールドのハイライト */
+.toolzoo-volume-input-field.active {
+    border-color: #0066cc;
+    background: #f0f6ff;
+    box-shadow: 0 0 6px rgba(0, 102, 204, 0.25);
+}
+
+.toolzoo-volume-input-unit {
+    font-size: 14px;
+    color: #555;
+    min-width: 28px;
+}
+
+.toolzoo-volume-btn-row {
+    margin-top: 6px;
+}
+
+.toolzoo-volume-clear-btn {
+    padding: 8px 24px;
+    font-size: 13px;
+    color: #555;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.toolzoo-volume-clear-btn:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+/* --- 解説テーブル共通 --- */
+.toolzoo-volume-shakkan,
+.toolzoo-volume-imperial {
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.toolzoo-volume-shakkan h4,
+.toolzoo-volume-imperial h4 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #555;
+    font-weight: bold;
+}
+
+.toolzoo-volume-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.toolzoo-volume-info-table th,
+.toolzoo-volume-info-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.toolzoo-volume-info-table th {
+    background: #f5f5f5;
+    font-weight: bold;
+    color: #444;
+}
+
+.toolzoo-volume-info-table td:first-child {
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+}
+
+.toolzoo-volume-info-table td:nth-child(2) {
+    color: #666;
+}
+
+.toolzoo-volume-info-table td:nth-child(3) {
+    font-family: 'Courier New', monospace;
+    color: #0066cc;
+}
+
+/* 補足注記 */
+.toolzoo-volume-note {
+    margin: 10px 0 0 0;
+    font-size: 12px;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* --- レスポンシブ --- */
+@media screen and (max-width: 500px) {
+    .toolzoo-volume-container {
+        padding: 16px;
+    }
+
+    .toolzoo-volume-input-row {
+        flex-wrap: wrap;
+    }
+
+    .toolzoo-volume-input-label {
+        width: 7.5em;
+        font-size: 13px;
+    }
+
+    .toolzoo-volume-input-field {
+        width: 130px;
+        font-size: 14px;
+    }
+
+    .toolzoo-volume-reference-table th,
+    .toolzoo-volume-reference-table td {
+        padding: 6px 6px;
+        font-size: 12px;
+    }
+
+    .toolzoo-volume-info-table th,
+    .toolzoo-volume-info-table td {
+        padding: 5px 6px;
+        font-size: 12px;
+    }
+}
