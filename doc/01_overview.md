@@ -11,6 +11,13 @@ WordPress向けの便利ツール集を提供するプラグイン。ショー�
 ### 1.3 機能一覧
 1. パスワード生成機能 (`toolzoo_password`)
 2. 年号表示機能 (`toolzoo_nengo`)
+3. 世界時計 (`toolzoo_worldclock`)
+4. JSON整形ツール (`toolzoo_json`)
+5. ツール一覧ショートコード (`toolzoo_all`)
+6. ツールリンク (`toolzoo_links`)
+7. BMI計算 (`toolzoo_bmi`)
+8. IPアドレスチェッカー (`toolzoo_ip`)
+9. 長さ単位変換（メートル・フィート・寸） (`toolzoo_length_unit`)
 
 ### 1.4 技術要件
 - WordPress 5.0以上
@@ -83,6 +90,62 @@ Toolzoo (メインクラス)
 - CSS/JSは各ショートコードが使用されているページでのみ読み込み
 - ミニファイ版のアセット提供を検討
 - CDN使用の検討（フォントアイコンなど）
+
+### 2.5 パーマリンク/パスベースのアクセス方式
+
+ショートコードによるアクセス以外に、直接パスでツールにアクセスできるようにする。`add_rewrite_rule`を使用してパスベースのURL構造を実装。
+
+#### 2.5.1 URL構造
+```
+/toolzoo/[tool-name]
+```
+
+#### 2.5.2 各ツールへのパスマッピング
+
+| URL | ツール | 説明 |
+|-----|--------|------|
+| /toolzoo/password | パスワード生成ツール | random password generator |
+| /toolzoo/nengo | 年号変換ツール | Japanese calendar converter |
+| /toolzoo/worldclock | 世界時計 | World clock display |
+| /toolzoo/json | JSON成形ツール | JSON formatter and validator |
+| /toolzoo/bmi | BMI計算ツール | BMI calculator |
+| /toolzoo/ip | IP-CHECKER | IP address information |
+
+#### 2.5.3 実装方式
+1. **Rewrite Rule登録**
+   - プラグイン有効化時に`add_rewrite_rule`でパターンを登録
+   - クエリ変数でツール種別を識別
+   - `flush_rewrite_rules()`でパーマリンク構造を更新
+
+2. **テンプレートの読み込み**
+   - `template_include`フックで専用テンプレートを指定
+   - toolzoo専用テンプレート（template-toolzoo.php）を作成
+   - テンプレートで識別したツール種別に応じて対応するHTMLを出力
+
+3. **処理フロー**
+   ```
+   ユーザーが /toolzoo/password にアクセス
+       ↓
+   Rewrite Rule が マッチ
+       ↓
+   クエリ変数 ?toolzoo_tool=password が設定
+       ↓
+   template_include フック で template-toolzoo.php を読み込み
+       ↓
+   テンプレート内でツール種別を判定
+       ↓
+   対応する機能クラスを呼び出してHTMLを生成
+   ```
+
+#### 2.5.4 セキュリティ考慮事項
+- 無効なツール名へのアクセスに対する適切なエラーハンドリング
+- XSS対策（ショートコード時と同様）
+- 404ページへの適切なリダイレクト（無効なツール名の場合）
+
+#### 2.5.5 既存のショートコード方式との両立
+- 既存のショートコード方式は継続してサポート
+- 両方式で同じ機能クラスを利用し、コードの重複を避ける
+- ユーザーは任意の方式を選択可能
 
 ## 3. 開発フェーズ
 

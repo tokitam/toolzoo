@@ -41,10 +41,24 @@ add_action('plugins_loaded', 'toolzoo_init');
  * Plugin activation hook
  */
 function toolzoo_activate() {
-    // Placeholder for future processing
+    // Schedule rewrite rules to be registered on next init
+    add_action('init', 'toolzoo_register_rules_on_activation', 0);
+
+    // Flush rewrite rules
     flush_rewrite_rules();
 }
 register_activation_hook(__FILE__, 'toolzoo_activate');
+
+/**
+ * Register rewrite rules during activation (init hook)
+ */
+function toolzoo_register_rules_on_activation() {
+    require_once TOOLZOO_PLUGIN_DIR . 'includes/class-toolzoo.php';
+    $toolzoo = new Toolzoo();
+    $toolzoo->register_rewrite_rules();
+    flush_rewrite_rules();
+    remove_action('init', 'toolzoo_register_rules_on_activation');
+}
 
 /**
  * Plugin deactivation hook
